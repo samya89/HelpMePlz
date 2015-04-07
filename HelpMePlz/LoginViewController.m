@@ -34,16 +34,16 @@
 //            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome!", nil)];
             
             // Create Facebook Request for user's details
-//            FBRequest *request = [FBRequest requestForMe];
-//            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//                // This is an asynchronous method. When Facebook responds, if there are no errors, we'll update the Welcome label.
+            FBRequest *request = [FBRequest requestForMe];
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                // This is an asynchronous method. When Facebook responds, if there are no errors, we'll update the Welcome label.
 //                if (!error) {
 //                    NSString *displayName = result[@"name"];
 //                    if (displayName) {
 //                        self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome %@!", nil), displayName];
 //                    }
 //                }
-//            }];
+            }];
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
@@ -51,7 +51,7 @@
             
         }
         
-    } else {
+//    } else {
 //        self.welcomeLabel.text = NSLocalizedString(@"Not logged in", nil);
     }
 }
@@ -67,7 +67,7 @@
         // Customize the Log In View Controller
         logInViewController.delegate = self;
         logInViewController.facebookPermissions = @[@"friends_about_me"];
-        logInViewController.fields = PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton; // Show Twitter login, Facebook login, and a Dismiss button.
+        logInViewController.fields = PFLogInFieldsTwitter | PFLogInFieldsDismissButton; // Show Twitter login, Facebook login, and a Dismiss button. | PFLogInFieldsFacebook
         
         // Present Log In View Controller
         [self presentViewController:logInViewController animated:YES completion:NULL];

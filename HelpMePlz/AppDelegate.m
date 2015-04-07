@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import <Parse/Parse.h>
 #import <Parse/PFTwitterUtils.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -22,7 +23,8 @@
     // Override point for customization after application launch.
     
     [Parse setApplicationId:@"hA5hkShzgSnPP3gjZZx9Vu0DdS5xarIeT8QBLKI9" clientKey:@"TYGLDSmIfxtdAFsGPOmG7VEiaWoBdpUXqhdumg4i"];
-    [PFTwitterUtils initializeWithConsumerKey:@"SKpsGFNUQtvaj6m9ZGz8S7RuR" consumerSecret:@"7IhCSou2OuKCRc71NVyyhv4Nii0ZE5ZuQfnmc9YGxxsgcyTfya"];
+//    [PFFacebookUtils initializeFacebook];
+    [PFTwitterUtils initializeWithConsumerKey:@"LYyqXWNcR1dUvQAWmJSC4zmwK" consumerSecret:@"bdSzENzQgLkgEgUh2xWRsoogfl4355sac526inZXuRuUt3iahu"];
     
     // Set default ACLs
     PFACL *defaultACL = [PFACL ACL];
@@ -52,10 +54,21 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+// Facebook oauth callback
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    return [PFFacebookUtils handleOpenURL:url];
+//}
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+//    return [PFFacebookUtils handleOpenURL:url];
+//}
 
 @end
