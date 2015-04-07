@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import <Parse/Parse.h>
+#import <Parse/PFTwitterUtils.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"hA5hkShzgSnPP3gjZZx9Vu0DdS5xarIeT8QBLKI9" clientKey:@"TYGLDSmIfxtdAFsGPOmG7VEiaWoBdpUXqhdumg4i"];
+    [PFTwitterUtils initializeWithConsumerKey:@"SKpsGFNUQtvaj6m9ZGz8S7RuR" consumerSecret:@"7IhCSou2OuKCRc71NVyyhv4Nii0ZE5ZuQfnmc9YGxxsgcyTfya"];
+    
+    // Set default ACLs
+    PFACL *defaultACL = [PFACL ACL];
+    [defaultACL setPublicReadAccess:YES];
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[DemoTableViewController alloc] init]];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
