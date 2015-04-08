@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,7 +38,6 @@
         <!--Help Request List Table View Controller-->
         <scene sceneID="yn6-TL-bvM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-Sm-IdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="b6c-tT-sD3" customClass="HelpRequestListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" id="frn-vx-IHF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -94,6 +93,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-Sm-IdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2440" y="-12"/>
         </scene>
@@ -141,10 +141,35 @@
                     <view key="view" contentMode="scaleToFill" id="Ued-oM-xGC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN5-EA-y9y">
+                                <rect key="frame" x="184" y="185" width="232" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ8-ip-u1a">
+                                <rect key="frame" x="250" y="414" width="101" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonTapAction:" destination="UdE-06-JfL" eventType="touchUpInside" id="Ajn-WC-iTI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="aN5-EA-y9y" secondAttribute="centerY" constant="93.5" id="9ED-ZK-ClG"/>
+                            <constraint firstAttribute="centerX" secondItem="BQ8-ip-u1a" secondAttribute="centerX" id="SYO-VO-RaH"/>
+                            <constraint firstAttribute="centerY" secondItem="BQ8-ip-u1a" secondAttribute="centerY" constant="-138" id="T6V-4J-N4A"/>
+                            <constraint firstAttribute="centerX" secondItem="aN5-EA-y9y" secondAttribute="centerX" id="sjU-yT-atf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eFi-Cc-N5d"/>
                     <connections>
+                        <outlet property="welcomeLabel" destination="aN5-EA-y9y" id="hQ8-2g-TgX"/>
                         <segue destination="pIg-hS-TjA" kind="show" identifier="StudentSegue" id="lsp-zQ-Jvo"/>
                         <segue destination="8DG-Rn-t37" kind="show" identifier="TASegue" id="u4x-4g-oKw"/>
                     </connections>
