@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/PFLogInViewController.h>
+#import <Parse/PFProduct.h>
+#import <Parse/PFInstallation.h>
 
 @interface StudentViewController : UIViewController
 

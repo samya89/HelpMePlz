@@ -57,10 +57,16 @@
     if (user) {
         if ([user[@"TA"] boolValue]){
             NSLog(@"TA");
+            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+            [currentInstallation addUniqueObject:@"TA" forKey:@"channels"];
+            [currentInstallation saveInBackground];
             [self performSegueWithIdentifier:@"TASegue" sender:self];
         }
         else {
             NSLog(@"student");
+            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+            [currentInstallation addUniqueObject:@"Student" forKey:@"channels"];
+            [currentInstallation saveInBackground];
             [self performSegueWithIdentifier:@"StudentSegue" sender:self];
         }
         [self dismissViewControllerAnimated:YES completion:NULL];
