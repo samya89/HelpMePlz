@@ -10,73 +10,54 @@
 
 @interface StudentViewController ()
 
-@property (strong, nonatomic) NSString *channel;
-@property (strong, nonatomic) NSString *message;
-
 @end
 
 @implementation StudentViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)requestHelp:(UIButton *)sender {
-//    PFQuery *taQuery = [PFUser query];
-//    [taQuery whereKey:@"TA" equalTo:[NSNumber numberWithBool:YES]];
-//    [onlineQuery whereKey:@"user" notEqualTo:[NSNull null]];
-//    PFQuery *taQuery = [PFQuery queryWithClassName:@"_User"];
-//    [taQuery whereKey:@"TA" equalTo:[NSNumber numberWithBool:YES]];
-//    PFQuery *onlineQuery = [PFQuery queryWithClassName:@"_Session"];
-//    [onlineQuery whereKey:@"user" matchesQuery:taQuery];
-//    [onlineQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (error) {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        } else {
-//            self.onlineTAs = objects;
-//            NSLog(@"%@", objects);
-//        }
-//    }];
+    NSString *name = [PFUser currentUser][@"Name"];
+    NSString *notes = @"add notes here";
+    NSTimeInterval helpDuration;
+    BOOL isHandled;
+    
+    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+    [request setObject:name forKey:@"name"];
+    [request setObject:notes forKey:@"notes"];
+    [request setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+    [request setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
+                                                                message:@"Please try sending your message again."
+                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }
+        else {
+            // Everything was successful!
+            NSLog(@"Request saved successfully, yay!");
+        }
+    }];
 
     
-//    PFQuery *pushQuery = [PFInstallation query];
-//    [pushQuery whereKey:@"channels" equalTo:@"TA"];
-    
-    self.channel = @"TA";
-    self.message = @"I need help!";
-    // Send push notification to query
-    //PFInstallation *installation = [[PFInstallation alloc] init];
     PFPush *push = [[PFPush alloc] init];
-    
+    NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser].username];
+    NSDictionary *data = @{
+                           @"alert" : alert,
+                           @"badge" : @"Increment",
+                           @"sounds" : @"cheering.caf",
+                           @"username" : [PFUser currentUser].username
+                           };
+    NSLog(@"%@", data);
     [push setChannel:@"TA"];
-    [push setMessage:@"I need help!"];
-
+    [push setData:data];
     [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!succeeded)
         {
             NSLog(@"Push error: %@",[error localizedDescription]);
+        } else {
+            NSLog(@"error: %@", [error userInfo]);
         }
     }];
-    //
-//    BFTask *task = [PFPush sendPushMessageToChannelInBackground:self.channel withMessage:self.message];
-//    NSLog(@"%@", task);
 }
-
 
 @end
