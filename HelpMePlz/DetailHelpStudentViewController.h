@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startAssistingButton;
 @property (weak, nonatomic) IBOutlet UITextField *notesTextfield;
 @property (strong, nonatomic) PFObject *requestItem;
+@property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 
 - (IBAction)startAssisting:(UIButton *)sender;
 

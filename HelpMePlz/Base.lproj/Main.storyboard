@@ -92,12 +92,19 @@
                                     <action selector="submitRequestDetails:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="DHi-E2-c6S"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-o2-GZO">
+                                <rect key="frame" x="245" y="98" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="notesTextfield" destination="ADC-xQ-Thw" id="xt9-yJ-mq1"/>
                         <outlet property="startAssistingButton" destination="daC-xf-dRB" id="pRB-yj-Eag"/>
+                        <outlet property="studentNameLabel" destination="GM9-o2-GZO" id="YcE-a6-IN7"/>
                         <outlet property="submitDetailsButton" destination="fcs-DR-HRE" id="Uoj-D9-IXr"/>
                     </connections>
                 </viewController>

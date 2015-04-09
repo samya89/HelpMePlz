@@ -23,6 +23,9 @@
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
     [request setObject:name forKey:@"name"];
     [request setObject:notes forKey:@"notes"];
+    
+    [request setObject:isHandled forKey:];
+    
     [request setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
     [request setObject:[[PFUser currentUser] username] forKey:@"senderName"];
     [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
