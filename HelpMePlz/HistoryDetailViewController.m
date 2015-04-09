@@ -1,18 +1,18 @@
 //
-//  DetailViewController.m
+//  HistoryDetailViewController.m
 //  HelpMePlz
 //
 //  Created by Samia Al Rahmani on 4/6/15.
 //  Copyright (c) 2015 Samia Al Rahmani. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "HistoryDetailViewController.h"
 
-@interface DetailViewController ()
+@interface HistoryDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation HistoryDetailViewController
 
 #pragma mark - Managing the detail item
 
@@ -28,7 +28,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.helpDuration.text = [self.detailItem description];
     }
 }
 

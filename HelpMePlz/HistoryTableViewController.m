@@ -1,20 +1,20 @@
 //
-//  MasterViewController.m
+//  HistoryTableViewController.m
 //  HelpMePlz
 //
 //  Created by Samia Al Rahmani on 4/6/15.
 //  Copyright (c) 2015 Samia Al Rahmani. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "HistoryTableViewController.h"
+#import "HistoryDetailViewController.h"
 
-@interface MasterViewController ()
+@interface HistoryTableViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@implementation MasterViewController
+@implementation HistoryTableViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -25,8 +25,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning {
