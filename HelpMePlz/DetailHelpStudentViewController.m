@@ -55,6 +55,13 @@
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
     
+    [query whereKey:@"notes" equalTo:notes];
+    [query whereKey:@"isHandled" equalTo:id];
+     
+     //[query whereKey:@"signupemail" equalTo:myemailaddress];
+
+
+    
 //    NSTimeInterval helpDuration = 0;
     //    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
@@ -71,7 +78,7 @@
             [requestItem saveInBackground];
         }
     }];
-     [self dismissViewControllerAnimated:YES completion:nil];
+//     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
