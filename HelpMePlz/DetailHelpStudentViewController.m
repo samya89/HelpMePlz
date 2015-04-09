@@ -21,36 +21,25 @@
 - (void)setRequestItem:(id)newDetailItem {
     if (_requestItem != newDetailItem) {
         _requestItem = newDetailItem;
-        
         [self configureView];
     }
 }
 
 - (void)configureView {
-    // Update the user interface for the detail item.
     if (self.requestItem) {
         self.studentNameLabel.text = self.requestItem[@"name"]; 
     }
- 
-}
+ }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self configureView];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)startAssisting:(UIButton *)sender{
 }
 
-//BOOL issueResolved = YES;
-//    [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
     if ([sender isOn]) {

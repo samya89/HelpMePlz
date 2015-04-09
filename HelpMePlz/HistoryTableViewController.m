@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property NSMutableArray *objects;
-@property (strong, nonatomic) NSArray *requests;
+@property (strong, nonatomic) NSArray *archives;
 @end
 
 @implementation HistoryTableViewController
@@ -29,19 +29,17 @@
 }
 
 - (void)retrieveRequests {
-    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
-    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-    if ([request[@"isHandled"] boolValue]) {
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            } else {
-                self.requests = objects;
-                [self.tableView reloadData];
-                NSLog(@"%@", objects);
-            }
-        }];
-    }
+    PFQuery *query = [PFQuery queryWithClassName:@"Archives"];
+    PFObject *archive = [PFObject objectWithClassName:@"Archives"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        } else {
+            self.archives = objects;
+            [self.tableView reloadData];
+            NSLog(@"%@", objects);
+        }
+    }];
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
@@ -55,11 +53,11 @@
 
 #pragma mark - Segues
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(PFObject *)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        PFObject *object = self.objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        sender = self.archives[indexPath.row];
+        [[segue destinationViewController] setRequestItem:sender];
     }
 }
 
@@ -70,15 +68,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.requests count];
+    return [self.archives count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    PFObject *object = self.requests[indexPath.row];
+    PFObject *object = self.archives[indexPath.row];
     cell.studentNameLabel.text = object[@"name"];
-    cell.dateLabel.text = object[@"createdAt"];
+    NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", object.createdAt];
+    NSArray *postDateSplit = [parseDateAndTime componentsSeparatedByString:@" "];
+    cell.dateLabel.text = [postDateSplit objectAtIndex:0];
+    cell.timeLabel.text = [postDateSplit objectAtIndex:1];
     return cell;
 }
 
