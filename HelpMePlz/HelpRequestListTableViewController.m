@@ -11,6 +11,7 @@
 
 @interface HelpRequestListTableViewController ()
 
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property NSMutableArray *users;
 @end
 
@@ -22,10 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self retrieveRequests];
+}
+
+- (void)retrieveRequests {
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
-//    [query orderByAscending:@"username"];
-//    [query whereKey:@"TA" equalTo:[NSNumber numberWithBool:NO]];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -34,12 +40,13 @@
             [self.tableView reloadData];
         }
     }];
-    
-    
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)refreshTable {
+    //TODO: refresh your data
+    [self.refreshControl endRefreshing];
+    [self retrieveRequests];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

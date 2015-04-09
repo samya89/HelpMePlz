@@ -16,8 +16,4 @@
 @property (nonatomic, strong) PFUser *currentUser;
 @property (nonatomic, strong) NSMutableArray *students;
 
-
-
-
-
 @end
