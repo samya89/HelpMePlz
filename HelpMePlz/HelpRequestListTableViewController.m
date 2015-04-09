@@ -41,7 +41,6 @@
             NSLog(@"%@", objects);
         }
     }];
-<<<<<<< HEAD
 }
 
 - (void)refreshTable {
@@ -49,18 +48,6 @@
     [self.refreshControl endRefreshing];
     [self retrieveRequests];
     [self.tableView reloadData];
-=======
-    
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
->>>>>>> origin/master
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)insertNewObject:(id)sender {
@@ -89,7 +76,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.users.count;
     return [self.requests count];
 }
 
@@ -98,27 +84,8 @@
     PFObject *request = [self.requests objectAtIndex:indexPath.row];
     cell.studentNameLabel.text = request[@"name"];
     NSLog(@"request name %@", request[@"name"]);
-
-//    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
-//        cell.studentNameLabel.text = user[@"Name"];
-        cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
+    cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
     return cell;
 }
-
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
-
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.users removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
-
-
 
 @end
