@@ -23,14 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    PFQuery *query = [PFUser query];
-    [query orderByAscending:@"username"];
-    [query whereKey:@"TA" equalTo:[NSNumber numberWithBool:NO]];
+    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
+//    [query orderByAscending:@"username"];
+//    [query whereKey:@"TA" equalTo:[NSNumber numberWithBool:NO]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
-            self.allUsers = objects;
+            self.requests = objects;
             [self.tableView reloadData];
         }
     }];
@@ -74,13 +74,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return self.users.count;
-    return [self.allUsers count];
+    return [self.requests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HelpStudentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
-        cell.studentNameLabel.text = user[@"Name"];
+    PFObject *request = [self.requests objectAtIndex:indexPath.row];
+    cell.studentNameLabel.text = request[@"name"];
+    NSLog(@"request name %@", request[@"name"]);
+
+//    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
+//        cell.studentNameLabel.text = user[@"Name"];
         cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
     return cell;
 }

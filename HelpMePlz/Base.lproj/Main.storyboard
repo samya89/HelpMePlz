@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -50,28 +50,16 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4L-w9-Nik" id="lUL-Zk-czV">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-wb-Ga4">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-wb-Ga4">
                                             <rect key="frame" x="8" y="8" width="54" height="56"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="56" id="ZGg-Mf-lg3"/>
-                                                <constraint firstAttribute="width" constant="54" id="gcn-fR-Gna"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnH-CX-WVk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnH-CX-WVk">
                                             <rect key="frame" x="98" y="26" width="366" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="EnH-CX-WVk" secondAttribute="centerY" id="1MZ-4l-gqV"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="DTW-wb-Ga4" secondAttribute="bottom" id="Cc3-vm-c8h"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="EnH-CX-WVk" secondAttribute="trailing" constant="128" id="Tjq-O2-iSh"/>
-                                        <constraint firstItem="DTW-wb-Ga4" firstAttribute="leading" secondItem="lUL-Zk-czV" secondAttribute="leadingMargin" id="enh-4P-cEK"/>
-                                        <constraint firstItem="DTW-wb-Ga4" firstAttribute="top" secondItem="lUL-Zk-czV" secondAttribute="topMargin" id="w50-FG-rDc"/>
-                                        <constraint firstItem="EnH-CX-WVk" firstAttribute="leading" secondItem="DTW-wb-Ga4" secondAttribute="trailing" constant="36" id="yTb-4o-FXo"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="studentImageView" destination="DTW-wb-Ga4" id="CX6-F4-51O"/>
