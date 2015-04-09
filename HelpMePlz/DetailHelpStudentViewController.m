@@ -16,7 +16,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
+- (void)setRequestItem:(id)newDetailItem {
     if (_requestItem != newDetailItem) {
         _requestItem = newDetailItem;
         
@@ -27,7 +27,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.requestItem) {
-        
+        self.studentNameLabel.text = self.requestItem[@"name"]; 
     }
  
 }
@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.studentNameLabel.text = self.requestItem[@"name"];
+    [self configureView];
     
 }
 
