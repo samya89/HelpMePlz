@@ -12,7 +12,9 @@
 @interface DetailHelpStudentViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *startAssistingButton;
-@property (weak, nonatomic) IBOutlet UITextField *notesTextfield;
+@property (weak, nonatomic) IBOutlet UITextView *notesTextview;
+
+
 @property (strong, nonatomic) PFObject *requestItem;
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 

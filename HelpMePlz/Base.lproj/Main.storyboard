@@ -77,13 +77,8 @@
                                     <action selector="startAssisting:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="tAv-ni-8B9"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add notes" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADC-xQ-Thw">
-                                <rect key="frame" x="65" y="319" width="470" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
-                                <rect key="frame" x="277" y="390" width="49" height="30"/>
+                                <rect key="frame" x="276" y="434" width="49" height="30"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -98,11 +93,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add notes" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-2V-xhH">
+                                <rect key="frame" x="107" y="271" width="387" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="notesTextfield" destination="ADC-xQ-Thw" id="xt9-yJ-mq1"/>
+                        <outlet property="notesTextview" destination="ORp-2V-xhH" id="Ezj-ip-9vo"/>
                         <outlet property="startAssistingButton" destination="daC-xf-dRB" id="pRB-yj-Eag"/>
                         <outlet property="studentNameLabel" destination="GM9-o2-GZO" id="YcE-a6-IN7"/>
                         <outlet property="submitDetailsButton" destination="fcs-DR-HRE" id="Uoj-D9-IXr"/>

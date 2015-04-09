@@ -48,19 +48,21 @@
     
 }
 
+//BOOL issueResolved = YES;
+//    [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];
+
+
 - (IBAction)submitAssistDetails:(UIButton *)sender{
-    NSString *name = [PFUser currentUser][@"Name"];
-    NSString *notes = @"add notes here";
-    NSTimeInterval helpDuration;
-    BOOL isHandled;
+    NSString *notes = self.notesTextview.text;
+//    NSTimeInterval helpDuration = 0;
+    BOOL isHandled = YES;
     
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
-    [request setObject:name forKey:@"name"];
     [request setObject:notes forKey:@"notes"];
     
+    [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
+//    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
-    [request setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
-    [request setObject:[[PFUser currentUser] username] forKey:@"senderName"];
     [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
@@ -73,7 +75,8 @@
             NSLog(@"Request saved successfully, yay!");
         }
     }];
-    
+
+       
     
 }
 
