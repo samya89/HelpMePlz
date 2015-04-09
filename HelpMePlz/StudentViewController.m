@@ -17,14 +17,17 @@
 - (IBAction)requestHelp:(UIButton *)sender {
     NSString *name = [PFUser currentUser][@"Name"];
     NSString *notes = @"add notes here";
-    NSTimeInterval helpDuration;
-    BOOL isHandled;
+    NSTimeInterval helpDuration = 0;
+    BOOL isHandled = NO;
+    BOOL issueResolved = NO;
     
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
     [request setObject:name forKey:@"name"];
     [request setObject:notes forKey:@"notes"];
     
-    [request setObject:isHandled forKey:];
+    [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
+    [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];
+    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
     [request setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
     [request setObject:[[PFUser currentUser] username] forKey:@"senderName"];
