@@ -12,8 +12,7 @@
 @interface HelpRequestListTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *allUsers;
-@property (nonatomic, strong) PFUser *currentUser;
-@property (nonatomic, strong) NSMutableArray *students;
+//@property (nonatomic, strong) PFUser *currentUser;
 
 
 

@@ -32,9 +32,9 @@
         } else {
             self.allUsers = objects;
             [self.tableView reloadData];
+            NSLog(@"%@", objects);
         }
     }];
-    
     
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
