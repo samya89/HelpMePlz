@@ -53,31 +53,26 @@
 
 
 - (IBAction)submitAssistDetails:(UIButton *)sender{
-    NSString *notes = self.notesTextview.text;
+    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
+    
 //    NSTimeInterval helpDuration = 0;
-    BOOL isHandled = YES;
+    //    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
-    self.requestItem = [PFObject objectWithClassName:@"Requests"];
-    [self.requestItem setObject:notes forKey:@"notes"];
     
-    [self.requestItem setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
-//    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
-    
-    [self.requestItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
-                                                                message:@"Please try sending your message again."
-                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        }
-        else {
-            // Everything was successful!
-            NSLog(@"Request saved successfully, yay!");
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *requestItem, NSError *error) {
+        if (!requestItem) {
+            NSLog(@"The getFirstObject request failed.");
+            
+        } else {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved the object.");
+            requestItem[@"notes"] = self.notesTextview.text;
+            requestItem[@"isHandled"] = [NSNumber numberWithBool:YES];
+            [requestItem saveInBackground];
         }
     }];
+     [self dismissViewControllerAnimated:YES completion:nil];
 
-       
-    
 }
 
 
