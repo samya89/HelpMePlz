@@ -17,6 +17,7 @@
 - (IBAction)requestHelp:(UIButton *)sender {
     NSString *name = [PFUser currentUser][@"Name"];
     NSString *notes = @"add notes here";
+    NSString *imageName = [PFUser currentUser][@"image"];
     NSTimeInterval helpDuration = 0;
     BOOL isHandled = NO;
     BOOL issueResolved = NO;
@@ -24,6 +25,7 @@
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
     [request setObject:name forKey:@"name"];
     [request setObject:notes forKey:@"notes"];
+    [request setObject:imageName forKey:@"imageName"];
     
     [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
     [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];

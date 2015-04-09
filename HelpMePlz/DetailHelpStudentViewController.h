@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+@class  HelpRequestListTableViewController;
 
 @interface DetailHelpStudentViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *startAssistingButton;
 @property (weak, nonatomic) IBOutlet UITextView *notesTextview;
-
 
 @property (strong, nonatomic) PFObject *requestItem;
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;

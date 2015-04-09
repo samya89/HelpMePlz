@@ -16,31 +16,39 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
+- (void)setRequestItem:(id)newDetailItem {
+    if (_requestItem != newDetailItem) {
+        _requestItem = newDetailItem;
         [self configureView];
     }
 }
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.helpDuration.text = [self.detailItem description];
+    if (self.requestItem) {
+        NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", self.requestItem.createdAt];
+        NSArray *postDateSplit = [parseDateAndTime componentsSeparatedByString:@" "];
+        self.dateLabel.text = [postDateSplit objectAtIndex:0];
+        self.helpDuration.text = [postDateSplit objectAtIndex:1];
+        self.studentNameLabel.text = self.requestItem[@"name"];
+        self.notesLabel.text = self.requestItem[@"notes"];
+        if ([self.requestItem[@"issueResolved"] boolValue]==YES) {
+            self.issueResolvedLabel.text = @"YES";
+            self.issueResolvedLabel.textColor = [UIColor greenColor];
+        }
+        else if ([self.requestItem[@"issueResolved"] boolValue] == NO) {
+            self.issueResolvedLabel.text = @"NO";
+            self.issueResolvedLabel.textColor = [UIColor orangeColor];
+        }
+    }
+    else {
+        NSLog(@"User doesn't exist");
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
