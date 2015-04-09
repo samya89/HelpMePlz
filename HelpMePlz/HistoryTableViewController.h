@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  HistoryTableViewController.h
 //  HelpMePlz
 //
 //  Created by Samia Al Rahmani on 4/6/15.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface MasterViewController : UITableViewController
+@interface HistoryTableViewController : UITableViewController
 
 
 @end

@@ -40,7 +40,7 @@
 
     
     PFPush *push = [[PFPush alloc] init];
-    NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser].username];
+    NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser][@"Name"]];
     NSDictionary *data = @{
                            @"alert" : alert,
                            @"badge" : @"Increment",

@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 - (IBAction)logOutButtonTapAction:(id)sender;
+- (IBAction)backButton:(UIBarButtonItem *)sender;
 
 @end

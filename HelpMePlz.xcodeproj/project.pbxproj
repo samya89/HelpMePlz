@@ -17,8 +17,8 @@
 		93B0F1431AD46B5700303770 /* HelpStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B0F1421AD46B5700303770 /* HelpStudentTableViewCell.m */; };
 		93DB98901AD349CF007A1138 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB988F1AD349CF007A1138 /* main.m */; };
 		93DB98931AD349CF007A1138 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98921AD349CF007A1138 /* AppDelegate.m */; };
-		93DB98961AD349CF007A1138 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98951AD349CF007A1138 /* MasterViewController.m */; };
-		93DB98991AD349CF007A1138 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98981AD349CF007A1138 /* DetailViewController.m */; };
+		93DB98961AD349CF007A1138 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98951AD349CF007A1138 /* HistoryTableViewController.m */; };
+		93DB98991AD349CF007A1138 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98981AD349CF007A1138 /* HistoryDetailViewController.m */; };
 		93DB989C1AD349CF007A1138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989A1AD349CF007A1138 /* Main.storyboard */; };
 		93DB989E1AD349CF007A1138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989D1AD349CF007A1138 /* Images.xcassets */; };
 		93DB98A11AD349CF007A1138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989F1AD349CF007A1138 /* LaunchScreen.xib */; };
@@ -48,6 +48,7 @@
 		EBFE031E1AD4A516005DF3FA /* ape09.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03151AD4A516005DF3FA /* ape09.png */; };
 		EBFE031F1AD4A516005DF3FA /* ape10.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03161AD4A516005DF3FA /* ape10.png */; };
 		EBFE03221AD4C7FE005DF3FA /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */; };
+		EBFE03281AD61E56005DF3FA /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03271AD61E56005DF3FA /* HistoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +77,10 @@
 		93DB988F1AD349CF007A1138 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93DB98911AD349CF007A1138 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93DB98921AD349CF007A1138 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		93DB98941AD349CF007A1138 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		93DB98951AD349CF007A1138 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		93DB98971AD349CF007A1138 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		93DB98981AD349CF007A1138 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		93DB98941AD349CF007A1138 /* HistoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		93DB98951AD349CF007A1138 /* HistoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		93DB98971AD349CF007A1138 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
+		93DB98981AD349CF007A1138 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		93DB989B1AD349CF007A1138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93DB989D1AD349CF007A1138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93DB98A01AD349CF007A1138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -113,6 +114,8 @@
 		EBFE03161AD4A516005DF3FA /* ape10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ape10.png; sourceTree = "<group>"; };
 		EBFE03201AD4C7FE005DF3FA /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
 		EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
+		EBFE03261AD61E56005DF3FA /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		EBFE03271AD61E56005DF3FA /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +188,12 @@
 				93B0F1421AD46B5700303770 /* HelpStudentTableViewCell.m */,
 				EBFE03201AD4C7FE005DF3FA /* StudentViewController.h */,
 				EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */,
-				93DB98941AD349CF007A1138 /* MasterViewController.h */,
-				93DB98951AD349CF007A1138 /* MasterViewController.m */,
-				93DB98971AD349CF007A1138 /* DetailViewController.h */,
-				93DB98981AD349CF007A1138 /* DetailViewController.m */,
+				93DB98941AD349CF007A1138 /* HistoryTableViewController.h */,
+				93DB98951AD349CF007A1138 /* HistoryTableViewController.m */,
+				EBFE03261AD61E56005DF3FA /* HistoryTableViewCell.h */,
+				EBFE03271AD61E56005DF3FA /* HistoryTableViewCell.m */,
+				93DB98971AD349CF007A1138 /* HistoryDetailViewController.h */,
+				93DB98981AD349CF007A1138 /* HistoryDetailViewController.m */,
 				93DB989A1AD349CF007A1138 /* Main.storyboard */,
 				93DB989D1AD349CF007A1138 /* Images.xcassets */,
 				93DB989F1AD349CF007A1138 /* LaunchScreen.xib */,
@@ -385,10 +390,11 @@
 			files = (
 				EBFE03221AD4C7FE005DF3FA /* StudentViewController.m in Sources */,
 				93B0F1401AD46AEA00303770 /* HelpRequestListTableViewController.m in Sources */,
+				EBFE03281AD61E56005DF3FA /* HistoryTableViewCell.m in Sources */,
 				93DB98931AD349CF007A1138 /* AppDelegate.m in Sources */,
-				93DB98961AD349CF007A1138 /* MasterViewController.m in Sources */,
+				93DB98961AD349CF007A1138 /* HistoryTableViewController.m in Sources */,
 				93DB98901AD349CF007A1138 /* main.m in Sources */,
-				93DB98991AD349CF007A1138 /* DetailViewController.m in Sources */,
+				93DB98991AD349CF007A1138 /* HistoryDetailViewController.m in Sources */,
 				EBFE02F61AD39322005DF3FA /* LoginViewController.m in Sources */,
 				93B0F1431AD46B5700303770 /* HelpStudentTableViewCell.m in Sources */,
 			);
@@ -522,7 +528,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelpMePlz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";
@@ -541,7 +547,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelpMePlz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";

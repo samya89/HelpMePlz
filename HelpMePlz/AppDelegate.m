@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "HistoryDetailViewController.h"
 #import <Parse/Parse.h>
 #import <Parse/PFTwitterUtils.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
