@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+@class  HelpRequestListTableViewController;
 
 @interface DetailHelpStudentViewController : UIViewController
 

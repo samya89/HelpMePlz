@@ -37,9 +37,23 @@
     
 }
 
+<<<<<<< HEAD
+=======
+//- (void)deleteRequest {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+//    [request deleteInBackground];
+//}
+
+>>>>>>> samyaRequestWithArchives
 - (IBAction)startAssisting:(UIButton *)sender{
 }
 
+<<<<<<< HEAD
+=======
+}
+>>>>>>> samyaRequestWithArchives
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
     if ([sender isOn]) {
@@ -54,6 +68,7 @@
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     
     NSString *name = [PFUser currentUser][@"Name"];
+    NSString *name = self.requestItem[@"name"];
     NSString *notes = @"add notes here";
     NSTimeInterval helpDuration = 0;
     
@@ -78,6 +93,9 @@
             NSLog(@"Request saved successfully, yay!");
         }
     }];
+    
+//    [self deleteRequest];
+}
 
     /*
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
@@ -98,9 +116,7 @@
             requestItem[@"isHandled"] = [NSNumber numberWithBool:YES];
             [requestItem saveInBackground];
     }];
-    //     [self dismissViewControllerAnimated:YES completion:nil];
      */
-}
 
 
 

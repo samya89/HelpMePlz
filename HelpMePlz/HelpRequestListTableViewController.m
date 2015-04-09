@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property NSMutableArray *users;
+@property (strong, nonatomic) NSMutableArray *users;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @end
 
 @implementation HelpRequestListTableViewController
@@ -27,6 +29,12 @@
     [self retrieveRequests];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    
+}
+
 - (void)retrieveRequests {
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -38,6 +46,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
             self.requests = objects;
+            self.requests = [objects mutableCopy];
             [self.tableView reloadData];
             NSLog(@"%@", objects);
         }
@@ -50,6 +59,12 @@
     [self.tableView reloadData];
 }
 
+- (void)deleteRequest {
+//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+//    PFObject *request = [self.requests objectAtIndex:self.indexPath.row];
+//    [request deleteInBackground];
+}
+
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -60,6 +75,16 @@
         [[segue destinationViewController] setRequestItem:request];
     }
 }
+
+- (IBAction)unwindToUpdate:(UIStoryboardSegue *)segue
+{
+    PFObject *request = [self.requests objectAtIndex:self.indexPath.row];
+    [self.requests removeObject:request];
+//    [self deleteRequest];
+    [self.tableView reloadData];
+}
+
+
 
 #pragma mark - Table View
 
@@ -77,6 +102,7 @@
     cell.studentNameLabel.text = request[@"name"];
     NSLog(@"request name %@", request[@"name"]);
     cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
+    cell.studentImageView.image = [UIImage imageNamed:request[@"imageName"]];
     return cell;
 }
 
