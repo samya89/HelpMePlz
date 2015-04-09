@@ -11,4 +11,8 @@
 
 @interface LoginViewController : UIViewController<PFLogInViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+
+- (IBAction)logOutButtonTapAction:(id)sender;
+
 @end

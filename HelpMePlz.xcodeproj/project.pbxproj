@@ -47,6 +47,7 @@
 		EBFE031D1AD4A516005DF3FA /* ape08.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03141AD4A516005DF3FA /* ape08.png */; };
 		EBFE031E1AD4A516005DF3FA /* ape09.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03151AD4A516005DF3FA /* ape09.png */; };
 		EBFE031F1AD4A516005DF3FA /* ape10.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03161AD4A516005DF3FA /* ape10.png */; };
+		EBFE03221AD4C7FE005DF3FA /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		EBFE03141AD4A516005DF3FA /* ape08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ape08.png; sourceTree = "<group>"; };
 		EBFE03151AD4A516005DF3FA /* ape09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ape09.png; sourceTree = "<group>"; };
 		EBFE03161AD4A516005DF3FA /* ape10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ape10.png; sourceTree = "<group>"; };
+		EBFE03201AD4C7FE005DF3FA /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
+		EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				93B0F13F1AD46AEA00303770 /* HelpRequestListTableViewController.m */,
 				93B0F1411AD46B5700303770 /* HelpStudentTableViewCell.h */,
 				93B0F1421AD46B5700303770 /* HelpStudentTableViewCell.m */,
+				EBFE03201AD4C7FE005DF3FA /* StudentViewController.h */,
+				EBFE03211AD4C7FE005DF3FA /* StudentViewController.m */,
 				93DB98941AD349CF007A1138 /* MasterViewController.h */,
 				93DB98951AD349CF007A1138 /* MasterViewController.m */,
 				93DB98971AD349CF007A1138 /* DetailViewController.h */,
@@ -378,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFE03221AD4C7FE005DF3FA /* StudentViewController.m in Sources */,
 				93B0F1401AD46AEA00303770 /* HelpRequestListTableViewController.m in Sources */,
 				93DB98931AD349CF007A1138 /* AppDelegate.m in Sources */,
 				93DB98961AD349CF007A1138 /* MasterViewController.m in Sources */,
@@ -516,7 +522,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelpMePlz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";
@@ -535,7 +541,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelpMePlz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";
