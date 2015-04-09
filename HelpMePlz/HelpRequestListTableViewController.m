@@ -13,7 +13,6 @@
 @interface HelpRequestListTableViewController ()
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property NSMutableArray *users;
 @property (strong, nonatomic) NSMutableArray *users;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 @end
@@ -45,7 +44,6 @@
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
-            self.requests = objects;
             self.requests = [objects mutableCopy];
             [self.tableView reloadData];
             NSLog(@"%@", objects);
@@ -101,7 +99,6 @@
     PFObject *request = [self.requests objectAtIndex:indexPath.row];
     cell.studentNameLabel.text = request[@"name"];
     NSLog(@"request name %@", request[@"name"]);
-    cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
     cell.studentImageView.image = [UIImage imageNamed:request[@"imageName"]];
     return cell;
 }

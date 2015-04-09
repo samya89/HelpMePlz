@@ -48,7 +48,6 @@
 
 >>>>>>> samyaRequestWithArchives
 - (IBAction)startAssisting:(UIButton *)sender{
-}
 
 <<<<<<< HEAD
 =======
@@ -62,12 +61,10 @@
     else {
         self.issueResolved = NO;
     }
-
 }
 
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     
-    NSString *name = [PFUser currentUser][@"Name"];
     NSString *name = self.requestItem[@"name"];
     NSString *notes = @"add notes here";
     NSTimeInterval helpDuration = 0;

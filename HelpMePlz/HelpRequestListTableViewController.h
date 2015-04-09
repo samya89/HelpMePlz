@@ -11,7 +11,6 @@
 
 @interface HelpRequestListTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *requests;
 @property (nonatomic, strong) NSMutableArray *requests;
 
 @end
