@@ -17,12 +17,14 @@
 - (IBAction)requestHelp:(UIButton *)sender {
     NSString *name = [PFUser currentUser][@"Name"];
     NSString *notes = @"add notes here";
+    NSString *imageName = [PFUser currentUser][@"image"];
     NSTimeInterval helpDuration = 0;
     BOOL issueResolved = NO;
     
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
     [request setObject:name forKey:@"name"];
     [request setObject:notes forKey:@"notes"];
+    [request setObject:imageName forKey:@"imageName"];
     
     [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];
     [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];

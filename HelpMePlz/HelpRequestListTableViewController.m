@@ -99,7 +99,7 @@
     PFObject *request = [self.requests objectAtIndex:indexPath.row];
     cell.studentNameLabel.text = request[@"name"];
     NSLog(@"request name %@", request[@"name"]);
-    cell.studentImageView.image = [UIImage imageNamed:@"year_of_monkey-75.png"];
+    cell.studentImageView.image = [UIImage imageNamed:request[@"imageName"]];
     return cell;
 }
 
