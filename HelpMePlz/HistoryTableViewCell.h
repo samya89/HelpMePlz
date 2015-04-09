@@ -10,4 +10,8 @@
 
 @interface HistoryTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 @end

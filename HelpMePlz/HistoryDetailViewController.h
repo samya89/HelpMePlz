@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *helpDuration;
 @property (weak, nonatomic) IBOutlet UILabel *issueResolvedLabel;
-@property (weak, nonatomic) IBOutlet UILabel *notesLabel;
+@property (weak, nonatomic) IBOutlet UITextView *notesLabel;
 
 @end
 
