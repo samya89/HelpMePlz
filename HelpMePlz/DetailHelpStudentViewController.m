@@ -57,13 +57,13 @@
 //    NSTimeInterval helpDuration = 0;
     BOOL isHandled = YES;
     
-    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-    [request setObject:notes forKey:@"notes"];
+    self.requestItem = [PFObject objectWithClassName:@"Requests"];
+    [self.requestItem setObject:notes forKey:@"notes"];
     
-    [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
+    [self.requestItem setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
 //    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
-    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [self.requestItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
                                                                 message:@"Please try sending your message again."

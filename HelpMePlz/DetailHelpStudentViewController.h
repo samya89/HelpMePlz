@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 
 - (IBAction)startAssisting:(UIButton *)sender;
-
 - (IBAction)submitAssistDetails:(UIButton *)sender;
 
 
