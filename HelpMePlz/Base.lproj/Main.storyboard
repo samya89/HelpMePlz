@@ -5,36 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
-        <scene sceneID="cbA-Jc-dVh">
-            <objects>
-                <tableViewController id="xlS-xY-NUc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9jZ-cc-PJI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fUg-ky-VWS">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUg-ky-VWS" id="8kv-N3-df6">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xlS-xY-NUc" id="OhH-a6-MnV"/>
-                            <outlet property="delegate" destination="xlS-xY-NUc" id="tZ3-vz-BZo"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="MhX-mU-zRl"/>
-                    <connections>
-                        <segue destination="rS3-R9-Ivy" kind="show" id="QBn-tE-OXs"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OuB-bw-Cir" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3862" y="-748"/>
-        </scene>
         <!--Help Request List Table View Controller-->
         <scene sceneID="yn6-TL-bvM">
             <objects>
@@ -76,14 +46,14 @@
                     <navigationItem key="navigationItem" id="Tcg-Hz-Xcg">
                         <barButtonItem key="rightBarButtonItem" title="History" id="nSe-Nw-j9G">
                             <connections>
-                                <segue destination="UY6-Y3-4JU" kind="show" id="zo4-CB-cmS"/>
+                                <segue destination="rS3-R9-Ivy" kind="show" id="xdE-nD-mbr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-Sm-IdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2440" y="-12"/>
+            <point key="canvasLocation" x="2440" y="4"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MHL-Tg-kov">
@@ -116,7 +86,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4562" y="-748"/>
+            <point key="canvasLocation" x="3213" y="-728"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="gFs-aB-1hR">
@@ -240,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5309" y="-748"/>
+            <point key="canvasLocation" x="3960" y="-728"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -276,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6050" y="-748"/>
+            <point key="canvasLocation" x="4701" y="-728"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVf-BD-JH9">
@@ -313,24 +283,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCu-6o-pVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1684" y="716"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Csg-BV-HhW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UY6-Y3-4JU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g1B-nw-9m5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xlS-xY-NUc" kind="relationship" relationship="rootViewController" id="fIn-lS-2vq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cPs-3u-Vt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3147" y="-748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="06I-yu-2xv">

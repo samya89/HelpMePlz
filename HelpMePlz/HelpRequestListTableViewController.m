@@ -38,8 +38,10 @@
         } else {
             self.requests = objects;
             [self.tableView reloadData];
+            NSLog(@"%@", objects);
         }
     }];
+<<<<<<< HEAD
 }
 
 - (void)refreshTable {
@@ -47,6 +49,13 @@
     [self.refreshControl endRefreshing];
     [self retrieveRequests];
     [self.tableView reloadData];
+=======
+    
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
+>>>>>>> origin/master
 }
 
 - (void)didReceiveMemoryWarning {
