@@ -11,7 +11,6 @@
 @interface HelpStudentTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
-
 @property (weak, nonatomic) IBOutlet UIImageView *studentImageView;
 
 @end

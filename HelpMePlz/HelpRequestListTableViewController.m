@@ -8,6 +8,7 @@
 
 #import "HelpRequestListTableViewController.h"
 #import "HelpStudentTableViewCell.h"
+#import "DetailHelpStudentViewController.h"
 
 @interface HelpRequestListTableViewController ()
 
@@ -44,30 +45,21 @@
 }
 
 - (void)refreshTable {
-    //TODO: refresh your data
     [self.refreshControl endRefreshing];
     [self retrieveRequests];
     [self.tableView reloadData];
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.users) {
-        self.users = [[NSMutableArray alloc] init];
-    }
-    [self.users insertObject:[PFUser user] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 #pragma mark - Segues
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-////        [[segue destinationViewController] setDetailItem:object];
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"assistDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *request = [PFObject objectWithClassName:@"Requests"];
+        request = self.requests[indexPath.row];
+        [[segue destinationViewController] setRequestItem:request];
+    }
+}
 
 #pragma mark - Table View
 
