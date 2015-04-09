@@ -55,32 +55,27 @@
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
     
-    [query whereKey:@"notes" equalTo:notes];
-    [query whereKey:@"isHandled" equalTo:id];
+    [query whereKey:@"notes" equalTo:@"add notes here"];
+    [query whereKey:@"isHandled" equalTo:[NSNumber numberWithBool:NO]];
+    
+    //    [query whereKey:@"TA" equalTo:[NSNumber numberWithBool:NO]];
      
      //[query whereKey:@"signupemail" equalTo:myemailaddress];
-
-
     
 //    NSTimeInterval helpDuration = 0;
     //    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
     
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *requestItem, NSError *error) {
-        if (!requestItem) {
-            NSLog(@"The getFirstObject request failed.");
-            
-        } else {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved the object.");
             requestItem[@"notes"] = self.notesTextview.text;
             requestItem[@"isHandled"] = [NSNumber numberWithBool:YES];
             [requestItem saveInBackground];
-        }
     }];
-//     [self dismissViewControllerAnimated:YES completion:nil];
-
+    //     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
 
 
 /*
