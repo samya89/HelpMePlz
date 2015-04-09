@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DD6DD09D-14F2-4625-8056-C7762716D56A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>HelpMePlz</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2ABA6EB051952F72D7CB52A7C265F7DFC03456F8</key>
 		<string>https://github.com/samya89/HelpMePlz.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HelpMePlz.xcodeproj</string>
+	<string>HelpMePlz.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2ABA6EB051952F72D7CB52A7C265F7DFC03456F8</key>

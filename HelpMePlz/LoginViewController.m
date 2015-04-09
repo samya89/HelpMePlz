@@ -15,6 +15,8 @@
 
 @interface LoginViewController ()
 
+@property (strong, nonatomic) NSMutableArray *allUsers;
+
 @end
 
 @implementation LoginViewController
@@ -26,10 +28,10 @@
         // If the user is logged in, show their name in the welcome label.
         
         if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
-            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome @%@!", nil), [PFTwitterUtils twitter].screenName];
+            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome\n@%@!", nil), [PFTwitterUtils twitter].screenName];
             
         } else {
-            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome %@!", nil), [PFUser currentUser].username];
+            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome\n%@!", nil), [PFUser currentUser].username];
         }
         
     } else {
@@ -87,6 +89,17 @@
 - (IBAction)logOutButtonTapAction:(id)sender {
     [PFUser logOut];
     [self createLoginScreen];
+}
+
+- (IBAction)backButton:(UIBarButtonItem *)sender {
+    PFUser *user = [PFUser currentUser];
+    if ([user[@"TA"] boolValue]){
+        [self performSegueWithIdentifier:@"TASegue" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"StudentSegue" sender:self];
+    }
+
 }
 
 @end
