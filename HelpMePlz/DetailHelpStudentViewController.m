@@ -37,8 +37,6 @@
     
 }
 
-<<<<<<< HEAD
-=======
 //- (void)deleteRequest {
 //    [super didReceiveMemoryWarning];
 //    // Dispose of any resources that can be recreated.
@@ -46,13 +44,9 @@
 //    [request deleteInBackground];
 //}
 
->>>>>>> samyaRequestWithArchives
 - (IBAction)startAssisting:(UIButton *)sender{
 
-<<<<<<< HEAD
-=======
 }
->>>>>>> samyaRequestWithArchives
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
     if ([sender isOn]) {
