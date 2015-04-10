@@ -11,13 +11,15 @@
 
 @interface HistoryDetailViewController : UIViewController
 
-@property (strong, nonatomic) PFObject *requestItem;
+@property (strong, nonatomic) PFObject *archiveItem;
 @property (weak, nonatomic) IBOutlet UIImageView *studentImage;
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *helpDuration;
 @property (weak, nonatomic) IBOutlet UILabel *issueResolvedLabel;
 @property (weak, nonatomic) IBOutlet UITextView *notesLabel;
+
+
 
 @end
 

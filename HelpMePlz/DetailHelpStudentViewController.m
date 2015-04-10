@@ -44,13 +44,12 @@
     self.notesTextview.layer.cornerRadius = 10.0f;
 }
 
-
 - (IBAction)startAssisting:(UIButton *)sender{
     [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
-    self.notesTextview.hidden = NO;
-    self.issueResolvedSwitch.hidden = NO;
-    self.submitButton.hidden = NO;
-    self.issueResolvedLabel.hidden = NO;
+        self.notesTextview.hidden = NO;
+        self.issueResolvedSwitch.hidden = NO;
+        self.submitButton.hidden = NO;
+        self.issueResolvedLabel.hidden = NO;
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
@@ -66,11 +65,13 @@
     
     NSString *name = self.requestItem[@"name"];
     NSString *notes = self.notesTextview.text;
+    NSString *imageName = self.requestItem[@"imageName"];
     NSTimeInterval helpDuration = 0;
     
     PFObject *archive = [PFObject objectWithClassName:@"Archives"];
     [archive setObject:name forKey:@"name"];
     [archive setObject:notes forKey:@"notes"];
+    [archive setObject:imageName forKey:@"imageName"];
     
     [archive setObject:[NSNumber numberWithBool:self.issueResolved] forKey:@"issueResolved"];
     [archive setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
