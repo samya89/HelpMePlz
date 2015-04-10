@@ -11,6 +11,7 @@
 
 @interface DetailHelpStudentViewController ()
 
+@property (assign, nonatomic) BOOL hasChanged;
 @property (assign, nonatomic) BOOL issueResolved;
 
 @end
@@ -42,15 +43,23 @@
     
     self.notesTextview.clipsToBounds = YES;
     self.notesTextview.layer.cornerRadius = 10.0f;
+    
+    self.hasChanged = NO;
 }
 
 
 - (IBAction)startAssisting:(UIButton *)sender{
-    [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
-    self.notesTextview.hidden = NO;
-    self.issueResolvedSwitch.hidden = NO;
-    self.submitButton.hidden = NO;
-    self.issueResolvedLabel.hidden = NO;
+    self.hasChanged =! self.hasChanged;
+    if (self.hasChanged) {
+        [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+        self.notesTextview.hidden = NO;
+        self.issueResolvedSwitch.hidden = NO;
+        self.submitButton.hidden = NO;
+        self.issueResolvedLabel.hidden = NO;
+    }
+    else {
+        self.startAssistingButton.hidden = YES;
+    }
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
