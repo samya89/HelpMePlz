@@ -7,6 +7,7 @@
 //
 
 #import "DetailHelpStudentViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DetailHelpStudentViewController ()
 
@@ -34,18 +35,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];
+    self.notesTextview.hidden = YES;
+    self.issueResolvedSwitch.hidden = YES;
+    self.submitButton.hidden = YES;
+    self.issueResolvedLabel.hidden = YES;
     
+    self.notesTextview.clipsToBounds = YES;
+    self.notesTextview.layer.cornerRadius = 10.0f;
 }
 
-//- (void)deleteRequest {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-//    [request deleteInBackground];
-//}
 
 - (IBAction)startAssisting:(UIButton *)sender{
-
+    [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+    self.notesTextview.hidden = NO;
+    self.issueResolvedSwitch.hidden = NO;
+    self.submitButton.hidden = NO;
+    self.issueResolvedLabel.hidden = NO;
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
@@ -60,7 +65,7 @@
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     
     NSString *name = self.requestItem[@"name"];
-    NSString *notes = @"add notes here";
+    NSString *notes = self.notesTextview.text;
     NSTimeInterval helpDuration = 0;
     
     PFObject *archive = [PFObject objectWithClassName:@"Archives"];
@@ -80,48 +85,15 @@
             [alertView show];
         }
         else {
-            // Everything was successful!
             NSLog(@"Request saved successfully, yay!");
         }
     }];
-    
-//    [self deleteRequest];
 }
 
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
-    
-    [query whereKey:@"notes" equalTo:@"add notes here"];
-    [query whereKey:@"isHandled" equalTo:[NSNumber numberWithBool:NO]];
-    
-    //    [query whereKey:@"TA" equalTo:[NSNumber numberWithBool:NO]];
-     
-     //[query whereKey:@"signupemail" equalTo:myemailaddress];
-    
-//    NSTimeInterval helpDuration = 0;
-    //    [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
-    
-    
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *requestItem, NSError *error) {
-            requestItem[@"notes"] = self.notesTextview.text;
-            requestItem[@"isHandled"] = [NSNumber numberWithBool:YES];
-            [requestItem saveInBackground];
-    }];
-     */
-
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesBegan:withEvent:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
-*/
-
 
 @end

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Help Request List Table View Controller-->
@@ -67,8 +68,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
-                                <rect key="frame" x="233" y="113" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
+                                <rect key="frame" x="225" y="126" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1yK-ww-6WI"/>
+                                    <constraint firstAttribute="height" constant="150" id="YUi-0s-S8q"/>
+                                </constraints>
                                 <state key="normal" title="Start Assisting" image="buttons-03.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,8 +81,12 @@
                                     <action selector="startAssisting:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="tAv-ni-8B9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
-                                <rect key="frame" x="253" y="442" width="94" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
+                                <rect key="frame" x="253" y="533" width="94" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="76A-9c-YbY"/>
+                                    <constraint firstAttribute="width" constant="94" id="Hw2-Aa-8RE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
                                 <color key="tintColor" red="0.26274509800000001" green="0.83137254900000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Submit" backgroundImage="button-05.png">
@@ -90,37 +99,58 @@
                                     <segue destination="NCC-Fq-QYU" kind="unwind" unwindAction="unwindToUpdate:" id="8hH-dh-XMt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-o2-GZO">
-                                <rect key="frame" x="253" y="84" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-o2-GZO">
+                                <rect key="frame" x="219" y="72" width="162" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add notes" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-2V-xhH">
-                                <rect key="frame" x="107" y="271" width="387" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-2V-xhH">
+                                <rect key="frame" x="43" y="312" width="514" height="97"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Issue Resolved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-XS-Vfl">
-                                <rect key="frame" x="242" y="358" width="117" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-uB-X6R">
-                                <rect key="frame" x="276" y="387" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-uB-X6R">
+                                <rect key="frame" x="276" y="461" width="51" height="31"/>
                                 <connections>
                                     <action selector="issueResolvedSwitch:" destination="Ng0-Bu-MZg" eventType="valueChanged" id="rzL-i3-asZ"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue Resolved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-XS-Vfl">
+                                <rect key="frame" x="251" y="435" width="98" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="GM9-o2-GZO" secondAttribute="centerX" constant="-0.5" id="2DP-mb-qAH"/>
+                            <constraint firstAttribute="centerY" secondItem="Ltg-uB-X6R" secondAttribute="centerY" constant="-176.5" id="4ue-CJ-8Zq"/>
+                            <constraint firstAttribute="centerX" secondItem="ORp-2V-xhH" secondAttribute="centerX" id="FmN-R6-res"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ORp-2V-xhH" secondAttribute="trailing" constant="27" id="IaZ-nc-VOF"/>
+                            <constraint firstItem="cEZ-XS-Vfl" firstAttribute="top" secondItem="ORp-2V-xhH" secondAttribute="bottom" constant="26" id="O5V-kK-phU"/>
+                            <constraint firstAttribute="centerX" secondItem="Ltg-uB-X6R" secondAttribute="centerX" id="UV7-mX-blo"/>
+                            <constraint firstAttribute="centerY" secondItem="GM9-o2-GZO" secondAttribute="centerY" constant="212" id="WQN-AB-tqi"/>
+                            <constraint firstItem="ORp-2V-xhH" firstAttribute="top" secondItem="daC-xf-dRB" secondAttribute="bottom" constant="36" id="aAv-5e-I1p"/>
+                            <constraint firstAttribute="centerX" secondItem="cEZ-XS-Vfl" secondAttribute="centerX" id="f2g-J1-C33"/>
+                            <constraint firstAttribute="centerX" secondItem="daC-xf-dRB" secondAttribute="centerX" id="iJQ-0E-sWX"/>
+                            <constraint firstAttribute="centerY" secondItem="cEZ-XS-Vfl" secondAttribute="centerY" constant="-144" id="mhT-f9-0hq"/>
+                            <constraint firstAttribute="centerY" secondItem="fcs-DR-HRE" secondAttribute="centerY" constant="-256.5" id="mll-Gk-4fs"/>
+                            <constraint firstItem="ORp-2V-xhH" firstAttribute="leading" secondItem="s3P-R7-irc" secondAttribute="leadingMargin" constant="27" id="t7y-cA-dwq"/>
+                            <constraint firstAttribute="centerX" secondItem="fcs-DR-HRE" secondAttribute="centerX" id="w39-Ri-qbJ"/>
+                            <constraint firstAttribute="centerY" secondItem="daC-xf-dRB" secondAttribute="centerY" constant="99" id="zo1-S5-sks"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="issueResolvedLabel" destination="cEZ-XS-Vfl" id="6vI-vc-Ekz"/>
+                        <outlet property="issueResolvedSwitch" destination="Ltg-uB-X6R" id="23c-T0-eqI"/>
                         <outlet property="notesTextview" destination="ORp-2V-xhH" id="Ezj-ip-9vo"/>
                         <outlet property="startAssistingButton" destination="daC-xf-dRB" id="pRB-yj-Eag"/>
                         <outlet property="studentNameLabel" destination="GM9-o2-GZO" id="YcE-a6-IN7"/>
+                        <outlet property="submitButton" destination="fcs-DR-HRE" id="T5A-xB-voz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw2-Iy-sNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,7 +214,7 @@ Label</string>
                     </view>
                     <navigationItem key="navigationItem" id="eFi-Cc-N5d">
                         <barButtonItem key="rightBarButtonItem" image="ape04.png" id="I5j-oS-PoI">
-                            <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButton:" destination="UdE-06-JfL" id="eZk-bE-hRl"/>
                             </connections>
@@ -359,8 +389,8 @@ Label</string>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdc-We-9Y2">
                                 <rect key="frame" x="51" y="375" width="497" height="205"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
