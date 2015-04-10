@@ -11,6 +11,7 @@
 
 @interface DetailHelpStudentViewController ()
 
+@property (assign, nonatomic) BOOL hasChanged;
 @property (assign, nonatomic) BOOL issueResolved;
 
 @end
@@ -42,14 +43,29 @@
     
     self.notesTextview.clipsToBounds = YES;
     self.notesTextview.layer.cornerRadius = 10.0f;
+    
+    self.hasChanged = NO;
 }
 
 - (IBAction)startAssisting:(UIButton *)sender{
+<<<<<<< HEAD
     [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+=======
+    self.hasChanged =! self.hasChanged;
+    if (self.hasChanged) {
+        [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+>>>>>>> 98chimp-UI-branch
         self.notesTextview.hidden = NO;
         self.issueResolvedSwitch.hidden = NO;
         self.submitButton.hidden = NO;
         self.issueResolvedLabel.hidden = NO;
+<<<<<<< HEAD
+=======
+    }
+    else {
+        self.startAssistingButton.hidden = YES;
+    }
+>>>>>>> 98chimp-UI-branch
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {

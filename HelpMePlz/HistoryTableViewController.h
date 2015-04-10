@@ -11,6 +11,5 @@
 
 @interface HistoryTableViewController : UITableViewController
 
-
 @end
 

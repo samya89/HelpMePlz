@@ -56,6 +56,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Tcg-Hz-Xcg">
                         <barButtonItem key="rightBarButtonItem" title="History" id="nSe-Nw-j9G">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="rS3-R9-Ivy" kind="show" id="xdE-nD-mbr"/>
                             </connections>
@@ -174,6 +175,10 @@
                 <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
@@ -223,7 +228,7 @@ Label</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eFi-Cc-N5d">
-                        <barButtonItem key="rightBarButtonItem" image="ape04.png" id="I5j-oS-PoI">
+                        <barButtonItem key="rightBarButtonItem" image="ape04_30.png" id="I5j-oS-PoI">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButton:" destination="UdE-06-JfL" id="eZk-bE-hRl"/>
@@ -398,11 +403,16 @@ Label</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdc-We-9Y2">
                                 <rect key="frame" x="31" y="407" width="538" height="147"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="height" constant="147" id="PyZ-rg-4uz"/>
                                 </constraints>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+=======
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+>>>>>>> 98chimp-UI-branch
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-hs-aJ7">
@@ -502,6 +512,10 @@ Label</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sl0-9C-V5x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -520,6 +534,10 @@ Label</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jpx-9X-D6V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -532,7 +550,12 @@ Label</string>
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="ape04.png" width="50" height="43"/>
+=======
+        <image name="ape01.png" width="725" height="725"/>
+        <image name="ape04_30.png" width="30" height="26"/>
+>>>>>>> 98chimp-UI-branch
         <image name="button-05.png" width="809" height="436"/>
         <image name="button-submit.png" width="809" height="436"/>
         <image name="buttons-02.png" width="1083" height="1083"/>
