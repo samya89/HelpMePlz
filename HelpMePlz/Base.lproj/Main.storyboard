@@ -350,7 +350,7 @@ Label</string>
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="History" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -462,7 +462,7 @@ Label</string>
                             <constraint firstItem="sfg-2h-t83" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" constant="15" id="w1I-Bv-7MU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Issue Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="dateLabel" destination="Lei-5M-9Gs" id="3hi-gS-vLf"/>
                         <outlet property="helpDuration" destination="Cc1-Qk-HIh" id="Dfo-LM-SLJ"/>

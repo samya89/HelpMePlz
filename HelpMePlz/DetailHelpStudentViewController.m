@@ -44,13 +44,12 @@
     self.notesTextview.layer.cornerRadius = 10.0f;
 }
 
-
 - (IBAction)startAssisting:(UIButton *)sender{
     [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
-    self.notesTextview.hidden = NO;
-    self.issueResolvedSwitch.hidden = NO;
-    self.submitButton.hidden = NO;
-    self.issueResolvedLabel.hidden = NO;
+        self.notesTextview.hidden = NO;
+        self.issueResolvedSwitch.hidden = NO;
+        self.submitButton.hidden = NO;
+        self.issueResolvedLabel.hidden = NO;
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
