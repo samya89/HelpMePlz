@@ -41,6 +41,11 @@
         
         [request setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
         [request setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+        
+        PFACL *requestACL = [PFACL ACLWithUser:[PFUser currentUser]];
+        [requestACL setPublicWriteAccess:YES];
+        [requestACL setPublicReadAccess:YES];
+        request.ACL = requestACL;
         [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
