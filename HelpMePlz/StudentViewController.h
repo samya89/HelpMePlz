@@ -14,6 +14,7 @@
 
 @interface StudentViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *helpLabel;
 @property (weak, nonatomic) IBOutlet UIButton *helpRequestLabel;
 @property (strong, nonatomic) NSArray *onlineTAs;
 

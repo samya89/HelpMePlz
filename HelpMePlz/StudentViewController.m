@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasChanged = NO;
+    self.helpLabel.hidden = YES;
 }
 
 - (IBAction)requestHelp:(UIButton *)sender {
@@ -73,9 +74,11 @@
         }];
         
         [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-01.png"] forState:UIControlStateNormal];
+        self.helpLabel.hidden = NO;
     }
     else {
         [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-02.png"] forState:UIControlStateNormal];
+        self.helpLabel.hidden = YES;
     }
 }
 

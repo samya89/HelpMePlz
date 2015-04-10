@@ -99,7 +99,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
                                 <color key="tintColor" red="0.26274509800000001" green="0.83137254900000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Submit" backgroundImage="button-05.png">
+                                <state key="normal" title="Submit" backgroundImage="button-submit.png">
                                     <color key="titleColor" red="0.2627450980392157" green="0.83137254901960789" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.26274509800000001" green="0.83137254900000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -270,15 +270,24 @@ Label</string>
                                     <action selector="requestHelp:" destination="nhH-rp-wcI" eventType="touchUpInside" id="u4W-lj-el0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help is underway!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-ki-Xju">
+                                <rect key="frame" x="196" y="114" width="209" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UgQ-jG-ckv" firstAttribute="centerX" secondItem="soJ-6C-Tce" secondAttribute="centerX" id="7SY-7s-krX"/>
+                            <constraint firstAttribute="centerX" secondItem="HOw-ki-Xju" secondAttribute="centerX" id="Msw-YO-NrS"/>
                             <constraint firstItem="UgQ-jG-ckv" firstAttribute="centerY" secondItem="soJ-6C-Tce" secondAttribute="centerY" id="h4L-mc-SpX"/>
+                            <constraint firstAttribute="centerY" secondItem="HOw-ki-Xju" secondAttribute="centerY" constant="169" id="wwI-dh-M9P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d3f-nl-l26"/>
                     <connections>
+                        <outlet property="helpLabel" destination="HOw-ki-Xju" id="w92-wg-6px"/>
                         <outlet property="helpRequestLabel" destination="UgQ-jG-ckv" id="sjw-2m-hYw"/>
                     </connections>
                 </viewController>
@@ -538,7 +547,6 @@ Label</string>
     </scenes>
     <resources>
         <image name="ape11_30.png" width="30" height="25"/>
-        <image name="button-05.png" width="809" height="436"/>
         <image name="button-logout.png" width="754" height="358"/>
         <image name="button-submit.png" width="809" height="436"/>
         <image name="buttons-02.png" width="1083" height="1083"/>

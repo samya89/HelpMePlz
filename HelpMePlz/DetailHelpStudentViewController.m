@@ -46,17 +46,18 @@
     self.notesTextview.layer.cornerRadius = 10.0f;
     
     self.hasChanged = NO;
+    self.notesTextview.delegate = self;
 }
 
 - (IBAction)startAssisting:(UIButton *)sender{
     self.hasChanged =! self.hasChanged;
     if (self.hasChanged) {
         [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+    }
+    else {
         self.notesTextview.hidden = NO;
         self.issueResolvedSwitch.hidden = NO;
         self.issueResolvedLabel.hidden = NO;
-    }
-    else {
         self.startAssistingButton.hidden = YES;
         self.submitButton.hidden = NO;
     }
@@ -105,6 +106,10 @@
     NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [self.notesTextview setText:@""];
 }
 
 @end
