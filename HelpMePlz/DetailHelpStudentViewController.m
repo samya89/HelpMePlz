@@ -66,11 +66,13 @@
     
     NSString *name = self.requestItem[@"name"];
     NSString *notes = self.notesTextview.text;
+    NSString *imageName = self.requestItem[@"imageName"];
     NSTimeInterval helpDuration = 0;
     
     PFObject *archive = [PFObject objectWithClassName:@"Archives"];
     [archive setObject:name forKey:@"name"];
     [archive setObject:notes forKey:@"notes"];
+    [archive setObject:imageName forKey:@"imageName"];
     
     [archive setObject:[NSNumber numberWithBool:self.issueResolved] forKey:@"issueResolved"];
     [archive setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];

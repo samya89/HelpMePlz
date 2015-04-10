@@ -25,10 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self retrieveRequests];
+    [self retrieveArchives];
 }
 
-- (void)retrieveRequests {
+- (void)retrieveArchives {
     PFQuery *query = [PFQuery queryWithClassName:@"Archives"];
     PFObject *archive = [PFObject objectWithClassName:@"Archives"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -47,7 +47,7 @@
 
 - (void)refreshTable {
     [self.refreshControl endRefreshing];
-    [self retrieveRequests];
+    [self retrieveArchives];
     [self.tableView reloadData];
 }
 
@@ -56,10 +56,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(PFObject *)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        sender = self.archives[indexPath.row];
-        [[segue destinationViewController] setRequestItem:sender];
+        PFObject *archive = [PFObject objectWithClassName:@"Archives"];
+        archive = self.archives[indexPath.row];
+        [[segue destinationViewController] setArchiveItem:archive];
+//        sender = self.archives[indexPath.row];
+//        [[segue destinationViewController] setRequestItem:sender];
     }
 }
+
 
 #pragma mark - Table View
 
@@ -74,12 +78,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    PFObject *object = self.archives[indexPath.row];
-    cell.studentNameLabel.text = object[@"name"];
-    NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", object.createdAt];
+    PFObject *archive = self.archives[indexPath.row];
+    cell.studentNameLabel.text = archive[@"name"];
+    NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", archive.createdAt];
     NSArray *postDateSplit = [parseDateAndTime componentsSeparatedByString:@" "];
     cell.dateLabel.text = [postDateSplit objectAtIndex:0];
     cell.timeLabel.text = [postDateSplit objectAtIndex:1];
+    cell.archiveUserImageview.image = [UIImage imageNamed:archive[@"imageName"]];
+
     return cell;
 }
 
