@@ -24,9 +24,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if ([PFUser currentUser]) {
-        // If the user is logged in, show their name in the welcome label.
-        
+    if ([PFUser currentUser]) {        
         if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
             self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"Welcome\n@%@!", nil), [PFTwitterUtils twitter].screenName];
             

@@ -14,6 +14,11 @@
 
 @implementation StudentViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+//    self.helpRequestLabel.imageView.image = [UIImage imageNamed:@"buttons-03.png"];
+}
+
 - (IBAction)requestHelp:(UIButton *)sender {
     NSString *name = [PFUser currentUser][@"Name"];
     NSString *notes = @"add notes here";
@@ -41,12 +46,10 @@
             [alertView show];
         }
         else {
-            // Everything was successful!
             NSLog(@"Request saved successfully, yay!");
         }
     }];
 
-    
     PFPush *push = [[PFPush alloc] init];
     NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser][@"Name"]];
     NSDictionary *data = @{
@@ -66,6 +69,8 @@
             NSLog(@"error: %@", [error userInfo]);
         }
     }];
+    
+    [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-01.png"] forState:UIControlStateNormal];
 }
 
 @end

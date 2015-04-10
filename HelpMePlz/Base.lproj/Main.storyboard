@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Help Request List Table View Controller-->
@@ -67,27 +67,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
-                                <rect key="frame" x="250" y="203" width="100" height="30"/>
-                                <state key="normal" title="Start Assisting">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
+                                <rect key="frame" x="233" y="113" width="150" height="150"/>
+                                <state key="normal" title="Start Assisting" image="buttons-03.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startAssisting:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="tAv-ni-8B9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
-                                <rect key="frame" x="276" y="434" width="49" height="30"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
+                                <rect key="frame" x="253" y="442" width="94" height="47"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                <color key="tintColor" red="0.26274509800000001" green="0.83137254900000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit" backgroundImage="button-05.png">
+                                    <color key="titleColor" red="0.2627450980392157" green="0.83137254901960789" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.26274509800000001" green="0.83137254900000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" backgroundImage="button-submit.png"/>
                                 <connections>
                                     <action selector="submitAssistDetails:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="vRo-BU-esD"/>
                                     <segue destination="NCC-Fq-QYU" kind="unwind" unwindAction="unwindToUpdate:" id="8hH-dh-XMt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-o2-GZO">
-                                <rect key="frame" x="245" y="98" width="111" height="21"/>
+                                <rect key="frame" x="253" y="84" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,18 +102,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-uB-X6R">
-                                <rect key="frame" x="276" y="387" width="51" height="31"/>
-                                <connections>
-                                    <action selector="issueResolvedSwitch:" destination="Ng0-Bu-MZg" eventType="valueChanged" id="rzL-i3-asZ"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Issue Resolved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-XS-Vfl">
                                 <rect key="frame" x="242" y="358" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-uB-X6R">
+                                <rect key="frame" x="276" y="387" width="51" height="31"/>
+                                <connections>
+                                    <action selector="issueResolvedSwitch:" destination="Ng0-Bu-MZg" eventType="valueChanged" id="rzL-i3-asZ"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -208,9 +212,13 @@ Label</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgQ-jG-ckv">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgQ-jG-ckv">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Voh-Uf-9WQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="qBE-3T-BGe"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="buttons-02.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -220,8 +228,8 @@ Label</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="UgQ-jG-ckv" secondAttribute="centerY" id="Uy1-fk-4qn"/>
-                            <constraint firstAttribute="centerX" secondItem="UgQ-jG-ckv" secondAttribute="centerX" id="dAS-t7-1Rk"/>
+                            <constraint firstItem="UgQ-jG-ckv" firstAttribute="centerX" secondItem="soJ-6C-Tce" secondAttribute="centerX" id="7SY-7s-krX"/>
+                            <constraint firstItem="UgQ-jG-ckv" firstAttribute="centerY" secondItem="soJ-6C-Tce" secondAttribute="centerY" id="h4L-mc-SpX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d3f-nl-l26"/>
@@ -438,5 +446,9 @@ Label</string>
     <resources>
         <image name="ape01.png" width="50" height="50"/>
         <image name="ape04.png" width="50" height="43"/>
+        <image name="button-05.png" width="809" height="436"/>
+        <image name="button-submit.png" width="809" height="436"/>
+        <image name="buttons-02.png" width="1083" height="1083"/>
+        <image name="buttons-03.png" width="1083" height="1083"/>
     </resources>
 </document>
