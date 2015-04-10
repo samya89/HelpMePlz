@@ -50,6 +50,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];
+    
+    self.notesLabel.clipsToBounds = YES;
+    self.notesLabel.layer.cornerRadius = 10.0f;
+
 }
 
 @end

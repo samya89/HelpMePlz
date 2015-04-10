@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSMutableArray *users;
 @property (strong, nonatomic) NSIndexPath *indexPath;
+
 @end
 
 @implementation HelpRequestListTableViewController

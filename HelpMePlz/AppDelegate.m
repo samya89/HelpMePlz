@@ -41,6 +41,8 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    
     return YES;
 }
 

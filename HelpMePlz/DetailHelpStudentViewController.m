@@ -12,6 +12,7 @@
 @interface DetailHelpStudentViewController ()
 
 @property (assign, nonatomic) BOOL issueResolved;
+@property (assign, nonatomic) bool hasChanged;
 
 @end
 
@@ -35,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];
+    
     self.notesTextview.hidden = YES;
     self.issueResolvedSwitch.hidden = YES;
     self.submitButton.hidden = YES;
@@ -42,14 +44,22 @@
     
     self.notesTextview.clipsToBounds = YES;
     self.notesTextview.layer.cornerRadius = 10.0f;
+    
+    self.hasChanged = NO;
 }
 
 - (IBAction)startAssisting:(UIButton *)sender{
-    [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
+    self.hasChanged =! self.hasChanged;
+    if (self.hasChanged) {
+        [self.startAssistingButton setImage:[UIImage imageNamed:@"buttons-04.png"] forState:UIControlStateNormal];
         self.notesTextview.hidden = NO;
         self.issueResolvedSwitch.hidden = NO;
-        self.submitButton.hidden = NO;
         self.issueResolvedLabel.hidden = NO;
+    }
+    else {
+        self.startAssistingButton.hidden = YES;
+        self.submitButton.hidden = NO;
+    }
 }
 
 - (IBAction)issueResolvedSwitch:(UISwitch *)sender {
