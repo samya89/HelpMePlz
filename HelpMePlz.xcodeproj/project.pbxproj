@@ -24,6 +24,11 @@
 		93DB98A11AD349CF007A1138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989F1AD349CF007A1138 /* LaunchScreen.xib */; };
 		93DB98AD1AD349CF007A1138 /* HelpMePlzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98AC1AD349CF007A1138 /* HelpMePlzTests.m */; };
 		93FBFF1C1AD6186200765CBA /* DetailHelpStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FBFF1B1AD6186200765CBA /* DetailHelpStudentViewController.m */; };
+		EB7FCE681AD741EA00D5BA9D /* buttons-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCE641AD741EA00D5BA9D /* buttons-01.png */; };
+		EB7FCE691AD741EA00D5BA9D /* buttons-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCE651AD741EA00D5BA9D /* buttons-02.png */; };
+		EB7FCE6A1AD741EA00D5BA9D /* buttons-03.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCE661AD741EA00D5BA9D /* buttons-03.png */; };
+		EB7FCE6B1AD741EA00D5BA9D /* buttons-04.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCE671AD741EA00D5BA9D /* buttons-04.png */; };
+		EB7FCE711AD74FD600D5BA9D /* button-submit.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCE701AD74FD600D5BA9D /* button-submit.png */; };
 		EBFE02D21AD38F8E005DF3FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFE02D11AD38F8E005DF3FA /* CFNetwork.framework */; };
 		EBFE02E91AD39034005DF3FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFE02DF1AD39033005DF3FA /* Foundation.framework */; };
 		EBFE02EA1AD39034005DF3FA /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFE02E01AD39033005DF3FA /* libsqlite3.0.dylib */; };
@@ -90,6 +95,11 @@
 		93DB98AC1AD349CF007A1138 /* HelpMePlzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpMePlzTests.m; sourceTree = "<group>"; };
 		93FBFF1A1AD6186200765CBA /* DetailHelpStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHelpStudentViewController.h; sourceTree = "<group>"; };
 		93FBFF1B1AD6186200765CBA /* DetailHelpStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHelpStudentViewController.m; sourceTree = "<group>"; };
+		EB7FCE641AD741EA00D5BA9D /* buttons-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons-01.png"; sourceTree = "<group>"; };
+		EB7FCE651AD741EA00D5BA9D /* buttons-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons-02.png"; sourceTree = "<group>"; };
+		EB7FCE661AD741EA00D5BA9D /* buttons-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons-03.png"; sourceTree = "<group>"; };
+		EB7FCE671AD741EA00D5BA9D /* buttons-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons-04.png"; sourceTree = "<group>"; };
+		EB7FCE701AD74FD600D5BA9D /* button-submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-submit.png"; sourceTree = "<group>"; };
 		EBFE02D11AD38F8E005DF3FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EBFE02DF1AD39033005DF3FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBFE02E01AD39033005DF3FA /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -263,6 +273,11 @@
 		EBFE030D1AD4A4FC005DF3FA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EB7FCE701AD74FD600D5BA9D /* button-submit.png */,
+				EB7FCE641AD741EA00D5BA9D /* buttons-01.png */,
+				EB7FCE651AD741EA00D5BA9D /* buttons-02.png */,
+				EB7FCE661AD741EA00D5BA9D /* buttons-03.png */,
+				EB7FCE671AD741EA00D5BA9D /* buttons-04.png */,
 				EBFE030E1AD4A516005DF3FA /* ape01.png */,
 				EBFE030F1AD4A516005DF3FA /* ape02.png */,
 				EBFE03101AD4A516005DF3FA /* ape03.png */,
@@ -363,10 +378,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7FCE6A1AD741EA00D5BA9D /* buttons-03.png in Resources */,
 				EBFE02FE1AD39B27005DF3FA /* year_of_monkey-75.png in Resources */,
 				EBFE031D1AD4A516005DF3FA /* ape08.png in Resources */,
+				EB7FCE6B1AD741EA00D5BA9D /* buttons-04.png in Resources */,
+				EB7FCE681AD741EA00D5BA9D /* buttons-01.png in Resources */,
 				93DB989C1AD349CF007A1138 /* Main.storyboard in Resources */,
 				93DB98A11AD349CF007A1138 /* LaunchScreen.xib in Resources */,
+				EB7FCE711AD74FD600D5BA9D /* button-submit.png in Resources */,
 				EBFE03191AD4A516005DF3FA /* ape03.png in Resources */,
 				EBFE031B1AD4A516005DF3FA /* ape05.png in Resources */,
 				EBFE031F1AD4A516005DF3FA /* ape10.png in Resources */,
@@ -376,6 +395,7 @@
 				EBFE031A1AD4A516005DF3FA /* ape04.png in Resources */,
 				EBFE031C1AD4A516005DF3FA /* ape06.png in Resources */,
 				93DB989E1AD349CF007A1138 /* Images.xcassets in Resources */,
+				EB7FCE691AD741EA00D5BA9D /* buttons-02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

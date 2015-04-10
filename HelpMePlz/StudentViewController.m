@@ -16,7 +16,6 @@
 
 - (IBAction)requestHelp:(UIButton *)sender {
     NSString *name = [PFUser currentUser][@"Name"];
-    NSString *notes = @"add notes here";
     NSString *imageName = [PFUser currentUser][@"image"];
     NSTimeInterval helpDuration = 0;
     BOOL isHandled = NO;
@@ -24,7 +23,6 @@
     
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
     [request setObject:name forKey:@"name"];
-    [request setObject:notes forKey:@"notes"];
     [request setObject:imageName forKey:@"imageName"];
     
     [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
@@ -41,12 +39,10 @@
             [alertView show];
         }
         else {
-            // Everything was successful!
             NSLog(@"Request saved successfully, yay!");
         }
     }];
 
-    
     PFPush *push = [[PFPush alloc] init];
     NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser][@"Name"]];
     NSDictionary *data = @{
@@ -66,6 +62,8 @@
             NSLog(@"error: %@", [error userInfo]);
         }
     }];
+    
+    [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-01.png"] forState:UIControlStateNormal];
 }
 
 @end

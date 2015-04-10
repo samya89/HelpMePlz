@@ -10,13 +10,16 @@
 #import <Parse/Parse.h>
 @class  HelpRequestListTableViewController;
 
-@interface DetailHelpStudentViewController : UIViewController
+@interface DetailHelpStudentViewController : UIViewController<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *startAssistingButton;
 @property (weak, nonatomic) IBOutlet UITextView *notesTextview;
+@property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *issueResolvedSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *issueResolvedLabel;
 
 @property (strong, nonatomic) PFObject *requestItem;
-@property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 
 - (IBAction)startAssisting:(UIButton *)sender;
 - (IBAction)submitAssistDetails:(UIButton *)sender;
