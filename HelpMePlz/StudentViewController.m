@@ -10,11 +10,20 @@
 
 @interface StudentViewController ()
 
+@property (assign, nonatomic) BOOL hasChanged;
+
 @end
 
 @implementation StudentViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.hasChanged = NO;
+}
+
 - (IBAction)requestHelp:(UIButton *)sender {
+    self.hasChanged =! self.hasChanged;
+    if (self.hasChanged){
     NSString *name = [PFUser currentUser][@"Name"];
     NSString *imageName = [PFUser currentUser][@"image"];
     NSTimeInterval helpDuration = 0;
@@ -62,8 +71,11 @@
             NSLog(@"error: %@", [error userInfo]);
         }
     }];
-    
     [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-01.png"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-02.png"] forState:UIControlStateNormal];
+    }
 }
 
 @end
