@@ -27,7 +27,23 @@
     // Update the user interface for the detail item.
     if (self.archiveItem) {
         NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", self.archiveItem.createdAt];
-        NSArray *postDateSplit = [parseDateAndTime componentsSeparatedByString:@" "];
+        NSLog(@"%@", parseDateAndTime);
+        
+        NSString *dateFormat = @"yyyy-MM-dd hh:mm:ss +mmss";
+        NSTimeZone *inputTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+        NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
+        [inputDateFormatter setTimeZone:inputTimeZone];
+        [inputDateFormatter setDateFormat:dateFormat];
+        NSString *inputString = [NSString stringWithFormat:@"%@", self.archiveItem.createdAt];
+        NSDate *date = [inputDateFormatter dateFromString:inputString];
+        NSTimeZone *outputTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"PST"];
+        NSDateFormatter *outputDateFormatter = [[NSDateFormatter alloc] init];
+        [outputDateFormatter setTimeZone:outputTimeZone];
+        [outputDateFormatter setDateFormat:dateFormat];
+        NSString *outputString = [outputDateFormatter stringFromDate:date];
+        NSLog(@"%@", date);
+        
+        NSArray *postDateSplit = [outputString componentsSeparatedByString:@" "];
         self.dateLabel.text = [postDateSplit objectAtIndex:0];
         self.helpDuration.text = [postDateSplit objectAtIndex:1];
         self.studentNameLabel.text = self.archiveItem[@"name"];

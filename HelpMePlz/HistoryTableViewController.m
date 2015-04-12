@@ -12,7 +12,6 @@
 
 @interface HistoryTableViewController ()
 
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property NSMutableArray *objects;
 @property (strong, nonatomic) NSArray *archives;
 @end
@@ -26,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self retrieveArchives];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)retrieveArchives {
@@ -40,9 +42,6 @@
             NSLog(@"%@", objects);
         }
     }];
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    [self.tableView addSubview:self.refreshControl];
-    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)refreshTable {
@@ -59,11 +58,8 @@
         PFObject *archive = [PFObject objectWithClassName:@"Archives"];
         archive = self.archives[indexPath.row];
         [[segue destinationViewController] setArchiveItem:archive];
-//        sender = self.archives[indexPath.row];
-//        [[segue destinationViewController] setRequestItem:sender];
     }
 }
-
 
 #pragma mark - Table View
 
@@ -81,7 +77,23 @@
     PFObject *archive = self.archives[indexPath.row];
     cell.studentNameLabel.text = archive[@"name"];
     NSString *parseDateAndTime = [NSString stringWithFormat:@"%@", archive.createdAt];
-    NSArray *postDateSplit = [parseDateAndTime componentsSeparatedByString:@" "];
+    NSLog(@"%@", parseDateAndTime);
+    
+    NSString *dateFormat = @"yyyy-MM-dd hh:mm:ss +mmss";
+    NSTimeZone *inputTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+    NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
+    [inputDateFormatter setTimeZone:inputTimeZone];
+    [inputDateFormatter setDateFormat:dateFormat];
+    NSString *inputString = [NSString stringWithFormat:@"%@", archive.createdAt];
+    NSDate *date = [inputDateFormatter dateFromString:inputString];
+    NSTimeZone *outputTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"PST"];
+    NSDateFormatter *outputDateFormatter = [[NSDateFormatter alloc] init];
+    [outputDateFormatter setTimeZone:outputTimeZone];
+    [outputDateFormatter setDateFormat:dateFormat];
+    NSString *outputString = [outputDateFormatter stringFromDate:date];
+    NSLog(@"%@", date);
+    
+    NSArray *postDateSplit = [outputString componentsSeparatedByString:@" "];
     cell.dateLabel.text = [postDateSplit objectAtIndex:0];
     cell.timeLabel.text = [postDateSplit objectAtIndex:1];
     cell.archiveUserImageview.image = [UIImage imageNamed:archive[@"imageName"]];

@@ -18,7 +18,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -68,10 +67,6 @@
     PFUser *currentUser = [PFUser currentUser];
     currentInstallation[@"user"] = currentUser ? :[NSNull null];
     [currentInstallation saveInBackground];
-    
-//    PFInstallation *installation = [PFInstallation currentInstallation];
-//    installation[@"user"] = [PFUser currentUser];
-//    [installation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

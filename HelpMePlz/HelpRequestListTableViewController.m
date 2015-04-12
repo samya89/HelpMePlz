@@ -12,7 +12,6 @@
 
 @interface HelpRequestListTableViewController ()
 
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSMutableArray *users;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 
@@ -27,12 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self retrieveRequests];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-//    [self refreshTable];
+    [self refreshTable];
 }
 
 - (void)retrieveRequests {
@@ -59,34 +61,17 @@
 }
 
 - (void)deleteRequest {
-//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-//    PFObject *request = [self.requests objectAtIndex:self.indexPath.row];
-//    [request deleteInBackground];
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     PFObject *request = [PFObject objectWithClassName:@"Requests"];
-//    PFObject *request = [PFObject objectWithoutDataWithClassName:@"Requests" objectId:@"xV5c85hDwx"];
     request = self.requests[indexPath.row];
-//    [request deleteInBackground];
-
-//    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
-//    [query whereKey:@"objectId" equalTo:request[@"objectId"]];
-//
-//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-//        if (!object) {
-//            NSLog(@"The getFirstObject request failed.");
-//        } else {
-//            // The find succeeded.
-//            NSLog(@"Successfully retrieved the object.");
-            [request deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded && !error) {
-                    NSLog(@"like deleted from parse");
-                    [self.tableView reloadData];
-                } else {
-                    NSLog(@"error: %@", error);
-                }
-            }];
-//        }
-//    }];
+    [request deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded && !error) {
+            NSLog(@"request deleted from Requests table on Parse");
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"error: %@", error);
+        }
+    }];
 }
 
 #pragma mark - Segues
@@ -102,13 +87,9 @@
 
 - (IBAction)unwindToUpdate:(UIStoryboardSegue *)segue
 {
-//    PFObject *request = [self.requests objectAtIndex:self.indexPath.row];
-//    [self.requests removeObject:request];
     [self deleteRequest];
     [self.tableView reloadData];
 }
-
-
 
 #pragma mark - Table View
 
