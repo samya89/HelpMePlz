@@ -39,10 +39,7 @@
 
 - (void)retrieveRequests {
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    [self.tableView addSubview:self.refreshControl];
-    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    
+    [query whereKey:@"isHandled" equalTo:[NSNumber numberWithBool:NO]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -74,6 +71,22 @@
     }];
 }
 
+- (void)udateRequest {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+    request = self.requests[indexPath.row];
+    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isHandled"];
+    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isResolved"];
+    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded && !error) {
+            NSLog(@"request updated in Requests table on Parse");
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"error: %@", error);
+        }
+    }];
+}
+
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -87,7 +100,7 @@
 
 - (IBAction)unwindToUpdate:(UIStoryboardSegue *)segue
 {
-    [self deleteRequest];
+    [self udateRequest];
     [self.tableView reloadData];
 }
 

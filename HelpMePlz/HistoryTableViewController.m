@@ -30,14 +30,28 @@
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
+//- (void)retrieveArchives {
+//    PFQuery *query = [PFQuery queryWithClassName:@"Archives"];
+//    PFObject *archive = [PFObject objectWithClassName:@"Archives"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        } else {
+//            self.archives = objects;
+//            [self.tableView reloadData];
+//            NSLog(@"%@", objects);
+//        }
+//    }];
+//}
+
 - (void)retrieveArchives {
-    PFQuery *query = [PFQuery queryWithClassName:@"Archives"];
-    PFObject *archive = [PFObject objectWithClassName:@"Archives"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
+    [query whereKey:@"isHandled" equalTo:[NSNumber numberWithBool:YES]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
-            self.archives = objects;
+            self.archives = [objects mutableCopy];
             [self.tableView reloadData];
             NSLog(@"%@", objects);
         }
@@ -55,7 +69,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(PFObject *)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        PFObject *archive = [PFObject objectWithClassName:@"Archives"];
+        PFObject *archive = [PFObject objectWithClassName:@"Requests"];
         archive = self.archives[indexPath.row];
         [[segue destinationViewController] setArchiveItem:archive];
     }
