@@ -30,20 +30,6 @@
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
-//- (void)retrieveArchives {
-//    PFQuery *query = [PFQuery queryWithClassName:@"Archives"];
-//    PFObject *archive = [PFObject objectWithClassName:@"Archives"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (error) {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        } else {
-//            self.archives = objects;
-//            [self.tableView reloadData];
-//            NSLog(@"%@", objects);
-//        }
-//    }];
-//}
-
 - (void)retrieveArchives {
     PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
     [query whereKey:@"isHandled" equalTo:[NSNumber numberWithBool:YES]];

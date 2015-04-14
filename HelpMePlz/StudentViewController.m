@@ -30,11 +30,12 @@
         NSTimeInterval helpDuration = 0;
         BOOL isHandled = NO;
         BOOL issueResolved = NO;
+        NSString *notes = @"add notes here";
         
         PFObject *request = [PFObject objectWithClassName:@"Requests"];
         [request setObject:name forKey:@"name"];
         [request setObject:imageName forKey:@"imageName"];
-        
+        [request setObject:notes forKey:@"notes"];
         [request setObject:[NSNumber numberWithBool:isHandled] forKey:@"isHandled"];
         [request setObject:[NSNumber numberWithBool:issueResolved] forKey:@"issueResolved"];
         [request setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
@@ -55,29 +56,27 @@
             }
             else {
                 NSLog(@"Request saved successfully, yay!");
+                PFPush *push = [[PFPush alloc] init];
+                NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser][@"Name"]];
+                NSDictionary *data = @{
+                                       @"alert" : alert,
+                                       @"badge" : @"Increment",
+                                       @"sounds" : @"cheering.caf",
+                                       @"username" : [PFUser currentUser].username
+                                       };
+                NSLog(@"%@", data);
+                [push setChannel:@"TA"];
+                [push setData:data];
+                [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!succeeded)
+                    {
+                        NSLog(@"Push error: %@",[error localizedDescription]);
+                    } else {
+                        NSLog(@"error: %@", [error userInfo]);
+                    }
+                }];
             }
-        }];
-        
-        PFPush *push = [[PFPush alloc] init];
-        NSString *alert = [NSString stringWithFormat:@"%@ needs your help.", [PFUser currentUser][@"Name"]];
-        NSDictionary *data = @{
-                               @"alert" : alert,
-                               @"badge" : @"Increment",
-                               @"sounds" : @"cheering.caf",
-                               @"username" : [PFUser currentUser].username
-                               };
-        NSLog(@"%@", data);
-        [push setChannel:@"TA"];
-        [push setData:data];
-        [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!succeeded)
-            {
-                NSLog(@"Push error: %@",[error localizedDescription]);
-            } else {
-                NSLog(@"error: %@", [error userInfo]);
-            }
-        }];
-        
+        }];        
         [self.helpRequestLabel setImage:[UIImage imageNamed:@"buttons-01.png"] forState:UIControlStateNormal];
         self.helpLabel.hidden = NO;
     }

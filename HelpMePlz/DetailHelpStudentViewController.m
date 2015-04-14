@@ -74,31 +74,28 @@
 
 - (IBAction)submitAssistDetails:(UIButton *)sender{
     
-    NSString *name = self.requestItem[@"name"];
     NSString *notes = self.notesTextview.text;
-    NSString *imageName = self.requestItem[@"imageName"];
-    NSTimeInterval helpDuration = 0;
+//    NSTimeInterval helpDuration = 0;
     
-    PFObject *archive = [PFObject objectWithClassName:@"Archives"];
-    [archive setObject:name forKey:@"name"];
-    [archive setObject:notes forKey:@"notes"];
-    [archive setObject:imageName forKey:@"imageName"];
-    
-    [archive setObject:[NSNumber numberWithBool:self.issueResolved] forKey:@"issueResolved"];
-    [archive setObject:[NSNumber numberWithDouble:helpDuration] forKey:@"helpDuration"];
-    
-    [archive setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
-    [archive setObject:[[PFUser currentUser] username] forKey:@"senderName"];
-    [archive saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
-                                                                message:@"Please try sending your message again."
-                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        }
-        else {
-            NSLog(@"Request saved successfully, yay!");
-        }
+    PFQuery *query = [PFQuery queryWithClassName:@"Requests"];
+    [query getObjectInBackgroundWithId:self.requestItem[@"objectId"] block:^(PFObject *request, NSError *error) {
+//        request = [PFObject objectWithClassName:@"Requests"];
+        self.requestItem[@"notes"] = notes;
+        self.requestItem[@"isHandled"] = [NSNumber numberWithBool:YES];
+        self.requestItem[@"issueResolved"] = [NSNumber numberWithBool:self.issueResolved];
+        self.requestItem[@"name"] = self.requestItem[@"name"];
+        self.requestItem[@"imageName"] = self.requestItem[@"imageName"];
+        [self.requestItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
+                                                                    message:@"Please try sending your message again."
+                                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }
+            else {
+                NSLog(@"Request saved successfully, yay!");
+            }
+        }];
     }];
 }
 

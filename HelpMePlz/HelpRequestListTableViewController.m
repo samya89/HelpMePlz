@@ -57,35 +57,35 @@
     [self.tableView reloadData];
 }
 
-- (void)deleteRequest {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-    request = self.requests[indexPath.row];
-    [request deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded && !error) {
-            NSLog(@"request deleted from Requests table on Parse");
-            [self.tableView reloadData];
-        } else {
-            NSLog(@"error: %@", error);
-        }
-    }];
-}
-
-- (void)udateRequest {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    PFObject *request = [PFObject objectWithClassName:@"Requests"];
-    request = self.requests[indexPath.row];
-    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isHandled"];
-    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isResolved"];
-    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded && !error) {
-            NSLog(@"request updated in Requests table on Parse");
-            [self.tableView reloadData];
-        } else {
-            NSLog(@"error: %@", error);
-        }
-    }];
-}
+//- (void)deleteRequest {
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+//    request = self.requests[indexPath.row];
+//    [request deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded && !error) {
+//            NSLog(@"request deleted from Requests table on Parse");
+//            [self.tableView reloadData];
+//        } else {
+//            NSLog(@"error: %@", error);
+//        }
+//    }];
+//}
+//
+//- (void)udateRequest {
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    PFObject *request = [PFObject objectWithClassName:@"Requests"];
+//    request = self.requests[indexPath.row];
+//    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isHandled"];
+//    [request setObject:[NSNumber numberWithBool:YES] forKey:@"isResolved"];
+//    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded && !error) {
+//            NSLog(@"request updated in Requests table on Parse");
+//            [self.tableView reloadData];
+//        } else {
+//            NSLog(@"error: %@", error);
+//        }
+//    }];
+//}
 
 #pragma mark - Segues
 
@@ -100,7 +100,7 @@
 
 - (IBAction)unwindToUpdate:(UIStoryboardSegue *)segue
 {
-    [self udateRequest];
+//    [self udateRequest];
     [self.tableView reloadData];
 }
 
