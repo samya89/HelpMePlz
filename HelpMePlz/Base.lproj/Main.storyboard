@@ -274,7 +274,7 @@ Label</string>
                                     <constraint firstAttribute="width" constant="200" id="qBE-3T-BGe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
-                                <state key="normal" title="Request Help" backgroundImage="buttons_Red Button.png">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -560,7 +560,6 @@ Label</string>
         <image name="button-logout.png" width="754" height="358"/>
         <image name="button-submit.png" width="809" height="436"/>
         <image name="buttons_Green Button.png" width="1083" height="1083"/>
-        <image name="buttons_Red Button.png" width="1083" height="1083"/>
         <image name="icon.png" width="1083" height="1083"/>
         <image name="tinyicon.png" width="40" height="40"/>
     </resources>
