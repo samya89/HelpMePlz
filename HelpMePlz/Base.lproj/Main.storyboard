@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiK-k5-B7Q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -78,19 +78,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
-                                <rect key="frame" x="225" y="126" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="1yK-ww-6WI"/>
-                                    <constraint firstAttribute="height" constant="150" id="YUi-0s-S8q"/>
-                                </constraints>
-                                <state key="normal" title="Start Assisting" image="buttons-03.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startAssisting:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="tAv-ni-8B9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-DR-HRE">
                                 <rect key="frame" x="253" y="533" width="94" height="47"/>
                                 <constraints>
@@ -134,6 +121,20 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daC-xf-dRB">
+                                <rect key="frame" x="200" y="112" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1yK-ww-6WI"/>
+                                    <constraint firstAttribute="height" constant="200" id="YUi-0s-S8q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <state key="normal" title="Start Assisting" backgroundImage="buttons_Green Button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAssisting:" destination="Ng0-Bu-MZg" eventType="touchUpInside" id="tAv-ni-8B9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -144,14 +145,14 @@
                             <constraint firstItem="cEZ-XS-Vfl" firstAttribute="top" secondItem="ORp-2V-xhH" secondAttribute="bottom" constant="26" id="O5V-kK-phU"/>
                             <constraint firstAttribute="centerX" secondItem="Ltg-uB-X6R" secondAttribute="centerX" id="UV7-mX-blo"/>
                             <constraint firstAttribute="centerY" secondItem="GM9-o2-GZO" secondAttribute="centerY" constant="212" id="WQN-AB-tqi"/>
-                            <constraint firstItem="ORp-2V-xhH" firstAttribute="top" secondItem="daC-xf-dRB" secondAttribute="bottom" constant="36" id="aAv-5e-I1p"/>
+                            <constraint firstItem="ORp-2V-xhH" firstAttribute="top" secondItem="daC-xf-dRB" secondAttribute="bottom" id="aAv-5e-I1p"/>
                             <constraint firstAttribute="centerX" secondItem="cEZ-XS-Vfl" secondAttribute="centerX" id="f2g-J1-C33"/>
                             <constraint firstAttribute="centerX" secondItem="daC-xf-dRB" secondAttribute="centerX" id="iJQ-0E-sWX"/>
                             <constraint firstAttribute="centerY" secondItem="cEZ-XS-Vfl" secondAttribute="centerY" constant="-144" id="mhT-f9-0hq"/>
                             <constraint firstAttribute="centerY" secondItem="fcs-DR-HRE" secondAttribute="centerY" constant="-256.5" id="mll-Gk-4fs"/>
                             <constraint firstItem="ORp-2V-xhH" firstAttribute="leading" secondItem="s3P-R7-irc" secondAttribute="leadingMargin" constant="27" id="t7y-cA-dwq"/>
                             <constraint firstAttribute="centerX" secondItem="fcs-DR-HRE" secondAttribute="centerX" id="w39-Ri-qbJ"/>
-                            <constraint firstAttribute="centerY" secondItem="daC-xf-dRB" secondAttribute="centerY" constant="99" id="zo1-S5-sks"/>
+                            <constraint firstAttribute="centerY" secondItem="daC-xf-dRB" secondAttribute="centerY" constant="88" id="zo1-S5-sks"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ8-ip-u1a">
-                                <rect key="frame" x="250" y="414" width="101" height="48"/>
+                                <rect key="frame" x="250" y="487" width="101" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="KuF-Vn-IqR"/>
                                     <constraint firstAttribute="width" constant="101" id="txY-Ic-8RD"/>
@@ -218,17 +219,26 @@ Label</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-FM-Ql5">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="uRi-rv-U9a"/>
+                                    <constraint firstAttribute="height" constant="300" id="yJZ-bM-AX6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="RIl-FM-Ql5" secondAttribute="centerY" id="77V-Mp-GgE"/>
                             <constraint firstAttribute="centerY" secondItem="aN5-EA-y9y" secondAttribute="centerY" constant="89" id="9ED-ZK-ClG"/>
+                            <constraint firstAttribute="centerX" secondItem="RIl-FM-Ql5" secondAttribute="centerX" id="OK5-r7-XNY"/>
                             <constraint firstAttribute="centerX" secondItem="BQ8-ip-u1a" secondAttribute="centerX" id="SYO-VO-RaH"/>
-                            <constraint firstAttribute="centerY" secondItem="BQ8-ip-u1a" secondAttribute="centerY" constant="-138" id="T6V-4J-N4A"/>
+                            <constraint firstAttribute="centerY" secondItem="BQ8-ip-u1a" secondAttribute="centerY" constant="-211" id="T6V-4J-N4A"/>
                             <constraint firstAttribute="centerX" secondItem="aN5-EA-y9y" secondAttribute="centerX" id="sjU-yT-atf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eFi-Cc-N5d">
-                        <barButtonItem key="rightBarButtonItem" image="ape11_30.png" id="I5j-oS-PoI">
+                        <barButtonItem key="rightBarButtonItem" image="tinyicon.png" id="I5j-oS-PoI">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButton:" destination="UdE-06-JfL" id="eZk-bE-hRl"/>
@@ -263,7 +273,8 @@ Label</string>
                                     <constraint firstAttribute="height" constant="200" id="Voh-Uf-9WQ"/>
                                     <constraint firstAttribute="width" constant="200" id="qBE-3T-BGe"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="buttons-02.png">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <state key="normal" title="Request Help" backgroundImage="buttons_Red Button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -546,10 +557,11 @@ Label</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ape11_30.png" width="30" height="25"/>
         <image name="button-logout.png" width="754" height="358"/>
         <image name="button-submit.png" width="809" height="436"/>
-        <image name="buttons-02.png" width="1083" height="1083"/>
-        <image name="buttons-03.png" width="1083" height="1083"/>
+        <image name="buttons_Green Button.png" width="1083" height="1083"/>
+        <image name="buttons_Red Button.png" width="1083" height="1083"/>
+        <image name="icon.png" width="1083" height="1083"/>
+        <image name="tinyicon.png" width="40" height="40"/>
     </resources>
 </document>
