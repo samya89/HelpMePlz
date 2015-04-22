@@ -80,12 +80,12 @@
             }
         }];        
         [self.helpRequestLabel setBackgroundImage:[UIImage imageNamed:@"buttons_Blue Button.png"] forState:UIControlStateNormal];
-        [self.helpRequestLabel setTitle:@"Request Help" forState:UIControlStateNormal];
+        [self.helpRequestLabel setTitle:@"Cancel Help" forState:UIControlStateNormal];
         self.helpLabel.hidden = NO;
     }
     else {
         [self.helpRequestLabel setBackgroundImage:[UIImage imageNamed:@"buttons_Red Button.png"] forState:UIControlStateNormal];
-        [self.helpRequestLabel setTitle:@"Cancel Help" forState:UIControlStateNormal];
+        [self.helpRequestLabel setTitle:@"Request Help" forState:UIControlStateNormal];
         self.helpLabel.hidden = YES;
     }
 }
