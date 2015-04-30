@@ -40,7 +40,6 @@
 		93DB989C1AD349CF007A1138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989A1AD349CF007A1138 /* Main.storyboard */; };
 		93DB989E1AD349CF007A1138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989D1AD349CF007A1138 /* Images.xcassets */; };
 		93DB98A11AD349CF007A1138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DB989F1AD349CF007A1138 /* LaunchScreen.xib */; };
-		93DB98AD1AD349CF007A1138 /* HelpMePlzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB98AC1AD349CF007A1138 /* HelpMePlzTests.m */; };
 		93FBFF1C1AD6186200765CBA /* DetailHelpStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FBFF1B1AD6186200765CBA /* DetailHelpStudentViewController.m */; };
 		EB19AF831AD820030091A2C4 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = EB19AF781AD820030091A2C4 /* Contents.json */; };
 		EB19AF841AD820030091A2C4 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = EB19AF791AD820030091A2C4 /* Icon-40.png */; };
@@ -99,16 +98,6 @@
 		EBFE03281AD61E56005DF3FA /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03271AD61E56005DF3FA /* HistoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		93DB98A71AD349CF007A1138 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93DB98821AD349CF007A1138 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93DB98891AD349CF007A1138;
-			remoteInfo = HelpMePlz;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		934A01E31ADE0E5700899B03 /* buttons_Blue Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons_Blue Button.png"; sourceTree = "<group>"; };
 		934A01E41ADE0E5700899B03 /* buttons_Green Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons_Green Button.png"; sourceTree = "<group>"; };
@@ -150,7 +139,6 @@
 		93DB989B1AD349CF007A1138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93DB989D1AD349CF007A1138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93DB98A01AD349CF007A1138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		93DB98A61AD349CF007A1138 /* HelpMePlzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpMePlzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DB98AB1AD349CF007A1138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93DB98AC1AD349CF007A1138 /* HelpMePlzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpMePlzTests.m; sourceTree = "<group>"; };
 		93FBFF1A1AD6186200765CBA /* DetailHelpStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHelpStudentViewController.h; sourceTree = "<group>"; };
@@ -242,13 +230,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93DB98A31AD349CF007A1138 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -286,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				93DB988A1AD349CF007A1138 /* HelpMePlz.app */,
-				93DB98A61AD349CF007A1138 /* HelpMePlzTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,24 +433,6 @@
 			productReference = 93DB988A1AD349CF007A1138 /* HelpMePlz.app */;
 			productType = "com.apple.product-type.application";
 		};
-		93DB98A51AD349CF007A1138 /* HelpMePlzTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93DB98B31AD349CF007A1138 /* Build configuration list for PBXNativeTarget "HelpMePlzTests" */;
-			buildPhases = (
-				93DB98A21AD349CF007A1138 /* Sources */,
-				93DB98A31AD349CF007A1138 /* Frameworks */,
-				93DB98A41AD349CF007A1138 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93DB98A81AD349CF007A1138 /* PBXTargetDependency */,
-			);
-			name = HelpMePlzTests;
-			productName = HelpMePlzTests;
-			productReference = 93DB98A61AD349CF007A1138 /* HelpMePlzTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -489,11 +451,6 @@
 							};
 						};
 					};
-					93DB98A51AD349CF007A1138 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8XYKYMJ675;
-						TestTargetID = 93DB98891AD349CF007A1138;
-					};
 				};
 			};
 			buildConfigurationList = 93DB98851AD349CF007A1138 /* Build configuration list for PBXProject "HelpMePlz" */;
@@ -510,7 +467,6 @@
 			projectRoot = "";
 			targets = (
 				93DB98891AD349CF007A1138 /* HelpMePlz */,
-				93DB98A51AD349CF007A1138 /* HelpMePlzTests */,
 			);
 		};
 /* End PBXProject section */
@@ -583,13 +539,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93DB98A41AD349CF007A1138 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -610,23 +559,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93DB98A21AD349CF007A1138 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93DB98AD1AD349CF007A1138 /* HelpMePlzTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		93DB98A81AD349CF007A1138 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93DB98891AD349CF007A1138 /* HelpMePlz */;
-			targetProxy = 93DB98A71AD349CF007A1138 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		93DB989A1AD349CF007A1138 /* Main.storyboard */ = {
@@ -665,7 +598,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shahin Zangenehpour (U73C8H6S4U)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -685,7 +619,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -707,6 +641,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -720,7 +655,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "4d414031-81c9-4d76-a5fb-f1fc46f04b11";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -730,8 +665,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/shahin/Downloads/parse-library-1.7.1",
@@ -742,7 +677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "086067fb-701b-4b06-9af8-0124d74e10dc";
 			};
 			name = Debug;
 		};
@@ -750,8 +685,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/shahin/Downloads/parse-library-1.7.1",
@@ -762,47 +697,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		93DB98B41AD349CF007A1138 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HelpMePlzTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpMePlz.app/HelpMePlz";
-			};
-			name = Debug;
-		};
-		93DB98B51AD349CF007A1138 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HelpMePlzTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpMePlz.app/HelpMePlz";
+				PROVISIONING_PROFILE = "086067fb-701b-4b06-9af8-0124d74e10dc";
 			};
 			name = Release;
 		};
@@ -823,15 +718,6 @@
 			buildConfigurations = (
 				93DB98B11AD349CF007A1138 /* Debug */,
 				93DB98B21AD349CF007A1138 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93DB98B31AD349CF007A1138 /* Build configuration list for PBXNativeTarget "HelpMePlzTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93DB98B41AD349CF007A1138 /* Debug */,
-				93DB98B51AD349CF007A1138 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
